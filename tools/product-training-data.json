@@ -1,0 +1,62 @@
+{
+  "packaging": {
+    "ru": "картонная коробка;упаковочная пленка;пакеты для продуктов;пищевая тара;пластиковый контейнер для упаковки;стеклянная банка для упаковки;упаковочный материал;бумажный пакет;гофрокороб;полипропиленовые мешки;одноразовый лоток для еды;бутылки для розлива;упаковочная лента;стрейч пленка;пузырчатая пленка;пакет для доставки;флаконы для косметики;транспортная упаковка;упаковка для пищевой продукции;пакеты с застежкой;упаковка для молока;пластиковые крышки;пластиковая тара;коробки для подарков;пищевая пленка;упаковка из картона;лотки для продуктов;емкости для перевозки товаров",
+    "en": "cardboard box;packaging film;food packaging;paper bag;plastic packaging container;glass jar packaging;shipping carton;plastic packaging bags;stretch wrap;bubble wrap;cosmetic bottles;packaging tape;gift box;food trays;shipping bags;milk packaging;packing materials;packaging containers",
+    "zh": "纸箱;包装薄膜;食品包装;纸袋;塑料包装容器;玻璃包装瓶;运输纸箱;塑料包装袋;保鲜膜;气泡膜;化妆品包装瓶;包装胶带;礼品盒;食品托盘;快递袋;牛奶包装;包装材料;包装容器"
+  },
+  "food": {
+    "ru": "молоко;хлеб;рыба;сыр;йогурт;кофе;чай;конфеты;печенье;шоколад;сок;вода питьевая;напиток;растительное масло;сахар;соль пищевая;мука;крупа;макароны;мясо;колбаса;консервы;мед;орехи;сухофрукты;замороженные ягоды;детское питание;пищевые добавки;приправа;соус;пищевая продукция;готовые блюда;корм для животных;витамины;бад;протеиновый батончик;пищевой продукт;порошковый напиток;мороженое;какао",
+    "en": "milk;bread;fish;cheese;yogurt;coffee;tea;candy;cookies;chocolate;juice;drinking water;drink;vegetable oil;sugar;salt;flour;cereal;pasta;meat;sausage;canned food;honey;nuts;dried fruit;baby food;food additive;sauce;ready meal;pet food;vitamins;protein bar;ice cream",
+    "zh": "牛奶;面包;鱼;奶酪;酸奶;咖啡;茶叶;糖果;饼干;巧克力;果汁;饮用水;饮料;食用油;白糖;食盐;面粉;谷物;意大利面;肉;香肠;罐头;蜂蜜;坚果;干果;婴儿食品;食品添加剂;酱汁;预制食品;宠物食品;维生素;蛋白棒;冰淇淋"
+  },
+  "beauty": {
+    "ru": "крем для лица;помада;тушь для ресниц;шампунь;гель для душа;духи;туалетная вода;косметическая сыворотка;лосьон для тела;маска для волос;краска для волос;мыло туалетное;крем для рук;лак для ногтей;бальзам для губ;пудра;тональный крем;солнцезащитный крем;масло для тела;зубная паста;ополаскиватель для рта;дезодорант;средство для умывания;скраб для тела;косметика;парфюмерия;детский шампунь;пенка для лица;мицеллярная вода;патчи для глаз;жидкое мыло для рук;крем для ног",
+    "en": "face cream;lipstick;mascara;shampoo;shower gel;perfume;cosmetic serum;body lotion;hair mask;hair dye;toilet soap;hand cream;nail polish;lip balm;face powder;foundation;sunscreen;body oil;toothpaste;mouthwash;deodorant;facial cleanser;body scrub;cosmetics;baby shampoo;micellar water",
+    "zh": "面霜;口红;睫毛膏;洗发水;沐浴露;香水;护肤精华;身体乳;发膜;染发剂;香皂;护手霜;指甲油;润唇膏;散粉;粉底;防晒霜;身体油;牙膏;漱口水;除臭剂;洁面乳;身体磨砂膏;化妆品;婴儿洗发水;卸妆水"
+  },
+  "textile": {
+    "ru": "футболка;свитер;платье;брюки;куртка;пальто;рубашка;джинсы;нижнее белье;носки;шапка;шарф;перчатки вязаные;постельное белье;полотенце;шторы;ткань хлопок;плед;одеяло;подушка;наволочка;простыня;скатерть;трикотаж;спортивный костюм;домашний халат;шелковая блузка;льняная одежда;швейные изделия;ткани;текстильные материалы;ковер;салфетки тканевые;взрослая одежда;вязаная кофта;свитшот;толстовка;юбка;жилет;мужской костюм",
+    "en": "t shirt;sweater;dress;trousers;jacket;coat;shirt;jeans;underwear;socks;knitted hat;scarf;knitted gloves;bed linen;towel;curtains;cotton fabric;blanket;duvet;pillow;pillowcase;bed sheet;tablecloth;knitwear;tracksuit;bathrobe;silk blouse;linen clothing;textile fabric;carpet;fabric napkins;adult clothing;hoodie;skirt;waistcoat",
+    "zh": "T恤;毛衣;连衣裙;裤子;夹克;大衣;衬衫;牛仔裤;内衣;袜子;针织帽;围巾;针织手套;床品;毛巾;窗帘;棉布;毛毯;被子;枕头;枕套;床单;桌布;针织服装;运动服;浴袍;丝绸上衣;亚麻服装;纺织面料;地毯;布餐巾;成人服装;卫衣;裙子;马甲"
+  },
+  "footwear": {
+    "ru": "кроссовки;туфли;ботинки;сапоги;сандалии;тапочки;босоножки;мокасины;кеды;валенки;резиновые сапоги;сумка;рюкзак;кошелек;ремень кожаный;чемодан;клатч;кожаные аксессуары;сумка дорожная;мужская обувь;женская обувь;пояс;портфель;кожаные перчатки;обувь;пляжные шлепанцы;женская сумочка;спортивная обувь",
+    "en": "sneakers;shoes;boots;sandals;slippers;loafers;canvas shoes;rubber boots;handbag;backpack;wallet;leather belt;suitcase;clutch bag;leather accessories;travel bag;mens footwear;womens shoes;briefcase;leather gloves;beach flip flops;sports shoes",
+    "zh": "运动鞋;鞋子;靴子;凉鞋;拖鞋;乐福鞋;帆布鞋;雨靴;手提包;背包;钱包;皮带;行李箱;手拿包;皮革配饰;旅行袋;男鞋;女鞋;公文包;皮手套;沙滩拖鞋;休闲鞋"
+  },
+  "children": {
+    "ru": "игрушка;кукла;мягкая игрушка;плюшевый медведь;конструктор;детская одежда;детские футболки;одежда для новорожденных;детская обувь;пеленка;подгузники;детская коляска;детская кроватка;соска;бутылочка для кормления;детская посуда;развивающие игрушки;пирамидка;детские кубики;детский самокат;погремушка;школьный рюкзак;детские книги;игрушечная машинка;детские товары;песочница детская;детский стульчик для кормления;слюнявчик;набор для детского творчества;игровой набор;пазлы для детей;настольные игры для детей",
+    "en": "toy;doll;soft toy;teddy bear;building blocks;childrens clothing;kids t shirts;newborn clothes;childrens shoes;nappy;diapers;baby stroller;cot;pacifier;feeding bottle;childrens tableware;educational toys;stacking rings;kids scooter;rattle;school backpack;childrens books;toy car;baby products;high chair;bib;kids craft kit;play set;kids puzzles",
+    "zh": "玩具;娃娃;毛绒玩具;泰迪熊;积木;童装;儿童T恤;新生儿衣服;童鞋;尿布;纸尿裤;婴儿推车;婴儿床;奶嘴;奶瓶;儿童餐具;益智玩具;套圈玩具;儿童滑板车;摇铃;学生书包;儿童图书;玩具汽车;婴儿用品;儿童餐椅;围兜;儿童手工套装;儿童拼图"
+  },
+  "equipment": {
+    "ru": "станок;токарный станок;фрезерный станок;насос промышленный;компрессор;подъемник;сварочный аппарат;промышленное оборудование;конвейер;производственная линия;котел промышленный;вентиляционная установка;металлообрабатывающий станок;пресс гидравлический;электродвигатель промышленный;погрузчик;кран грузоподъемный;упаковочный станок;пищевое оборудование;холодильная установка;станок с чпу;строительная машина;сельскохозяйственная техника;станок для дерева;комплектующие для станка;промышленная машина;генератор промышленный;турбина",
+    "en": "machine tool;lathe;milling machine;industrial pump;compressor;lifting equipment;welding machine;industrial equipment;conveyor;production line;industrial boiler;ventilation unit;metalworking machine;hydraulic press;industrial motor;forklift;lifting crane;packaging machine;food processing equipment;industrial refrigeration;cnc machine;construction machinery;agricultural machinery;woodworking machine;industrial generator;turbine",
+    "zh": "机床;车床;铣床;工业水泵;压缩机;升降设备;焊接设备;工业设备;输送机;生产线;工业锅炉;通风机组;金属加工机床;液压机;工业电机;叉车;起重机;包装机;食品加工设备;工业制冷设备;数控机床;工程机械;农业机械;木工机床;工业发电机;涡轮机"
+  },
+  "electronics": {
+    "ru": "провод;кабель;зарядное устройство;смартфон;ноутбук;телевизор;электрочайник;фен;утюг;пылесос;блендер;наушники;колонка;светильник;лампа светодиодная;розетка;выключатель;удлинитель;электроприбор;бытовая техника;электрический чайник;стиральная машина;холодильник;планшет;монитор;микроволновая печь;кофемашина;электробритва;пауэрбанк;блок питания;принтер;компьютер;электрическая гирлянда;светодиодная лента;электрические компоненты;электроника;электрика;usb кабель",
+    "en": "wire;cable;charger;smartphone;laptop;television;electric kettle;hair dryer;iron;vacuum cleaner;blender;headphones;speaker;light fixture;led lamp;socket;switch;extension lead;electrical appliance;home appliance;washing machine;refrigerator;tablet;monitor;microwave;coffee machine;electric shaver;power bank;power supply;printer;computer;fairy lights;led strip;electronic components;usb cable",
+    "zh": "电线;电缆;充电器;手机;笔记本电脑;电视;电水壶;吹风机;电熨斗;吸尘器;搅拌机;耳机;音箱;灯具;LED灯;插座;开关;延长线;电器;家用电器;洗衣机;冰箱;平板电脑;显示器;微波炉;咖啡机;电动剃须刀;充电宝;电源;打印机;电脑;彩灯;LED灯带;电子元件;USB线"
+  },
+  "furniture": {
+    "ru": "стол;стул;кресло;диван;шкаф;комод;тумба;кровать;матрас;кухонный гарнитур;полка;стеллаж;офисная мебель;мебель для дома;обеденный стол;деревянный стул;письменный стол;садовая мебель;табурет;пуф;банкетка;вешалка напольная;шкаф купе;книжный шкаф;мебельная стенка;кресло офисное;диван кровать;кухонный шкаф;мебельные фасады;столешница;прикроватная тумбочка",
+    "en": "table;chair;armchair;sofa;wardrobe;chest of drawers;cabinet;bed;mattress;kitchen furniture;shelf;shelving;office furniture;home furniture;dining table;wooden chair;writing desk;garden furniture;stool;ottoman;bench;coat rack;sliding wardrobe;bookcase;office chair;sofa bed;kitchen cabinet;furniture fronts;worktop;bedside table",
+    "zh": "桌子;椅子;扶手椅;沙发;衣柜;斗柜;柜子;床;床垫;厨房家具;搁板;货架;办公家具;家居家具;餐桌;木椅;书桌;花园家具;凳子;脚凳;长凳;衣帽架;推拉门衣柜;书柜;办公椅;沙发床;橱柜;家具门板;台面;床头柜"
+  },
+  "protection": {
+    "ru": "каска;респиратор;защитные очки;защитные перчатки;рабочие перчатки;страховочная привязь;защитная маска;средства индивидуальной защиты;защитная спецодежда;защитный комбинезон;противогаз;защитный шлем;беруши;шумозащитные наушники;перчатки от химических веществ;обувь защитная;сигнальный жилет;страховочный пояс;диэлектрические перчатки;защита от падения;защитный щиток;маска сварщика;медицинские защитные перчатки;фильтрующая полумаска;рабочая защитная одежда;защитная обувь",
+    "en": "safety helmet;respirator;safety goggles;protective gloves;work gloves;safety harness;protective mask;personal protective equipment;protective workwear;protective coveralls;gas mask;ear plugs;ear defenders;chemical resistant gloves;safety shoes;high visibility vest;safety belt;insulating gloves;fall protection;face shield;welding mask;protective medical gloves;filtering facepiece;protective boots",
+    "zh": "安全帽;呼吸防护器;护目镜;防护手套;工作手套;安全带;防护口罩;个人防护用品;防护工作服;防护连体服;防毒面具;耳塞;防噪耳罩;耐化学手套;安全鞋;反光背心;绝缘手套;防坠落装置;防护面屏;焊接面罩;医用防护手套;过滤式口罩;防护靴"
+  },
+  "chemicals": {
+    "ru": "стиральный порошок;средство для мытья посуды;средство для уборки;отбеливатель;пятновыводитель;кондиционер для белья;моющее средство;чистящий порошок;гель для стирки;средство для стекол;очиститель для ванной;средство для туалета;освежитель воздуха;полироль для мебели;средство для чистки ковров;бытовая химия;мыло хозяйственное;средство для удаления накипи;таблетки для посудомоечной машины;средство для прочистки труб;гель для уборки;дезинфицирующее средство для поверхностей;моющая жидкость;чистящее средство для кухни;средство для пола",
+    "en": "laundry detergent;dishwashing liquid;cleaning product;bleach;stain remover;fabric softener;washing powder;scouring powder;laundry gel;glass cleaner;bathroom cleaner;toilet cleaner;air freshener;furniture polish;carpet cleaner;household chemicals;laundry soap;descaler;dishwasher tablets;drain cleaner;surface disinfectant;floor cleaner;kitchen cleaner",
+    "zh": "洗衣液;洗洁精;清洁产品;漂白剂;去渍剂;衣物柔顺剂;洗衣粉;去污粉;洗衣凝胶;玻璃清洁剂;浴室清洁剂;洁厕剂;空气清新剂;家具护理剂;地毯清洁剂;日用化学品;洗衣皂;除垢剂;洗碗机清洁片;管道疏通剂;表面消毒剂;地板清洁剂;厨房清洁剂"
+  },
+  "dishes": {
+    "ru": "ваза;вазы для цветов;стеклянная ваза;керамическая ваза;ваза из пластика;декоративная ваза;вазочка;цветочный горшок;кашпо;тарелка;чашка;кружка;кастрюля;сковорода;стакан;бокал;салатник;миска;ложка;вилка;нож кухонный;посуда;набор посуды;столовый сервиз;керамические изделия;стеклянные изделия для дома;пластиковые товары для дома;ведро;таз;кухонный органайзер;разделочная доска;контейнер для хранения продуктов;дуршлаг;бутылка для воды многоразовая;термос;заварочный чайник;подставка под горячее;мыльница;ершик;корзина для белья;декор для дома;подсвечник;статуэтка;декоративная фигурка;поднос;термокружка;кувшин;графин;сахарница;хлебница;многоразовый контейнер;лоток для столовых приборов",
+    "en": "vase;flower vase;glass vase;ceramic vase;plastic vase;decorative vase;flower pot;planter;plate;cup;mug;saucepan;frying pan;drinking glass;wine glass;salad bowl;bowl;spoon;fork;kitchen knife;tableware;dinnerware set;ceramic homeware;glass homeware;plastic household goods;bucket;basin;kitchen organiser;cutting board;reusable food container;colander;reusable water bottle;thermos;teapot;trivet;soap dish;laundry basket;home decor;candle holder;decorative figurine;serving tray;travel mug;jug;carafe;sugar bowl;bread bin;cutlery tray",
+    "zh": "花瓶;鲜花花瓶;玻璃花瓶;陶瓷花瓶;塑料花瓶;装饰花瓶;花盆;种植盆;盘子;杯子;马克杯;锅;煎锅;玻璃杯;酒杯;沙拉碗;碗;勺子;叉子;菜刀;餐具;餐具套装;陶瓷家居用品;玻璃家居用品;塑料家用品;水桶;盆;厨房收纳架;砧板;食品保鲜盒;漏勺;可重复使用水瓶;保温瓶;茶壶;隔热垫;肥皂盒;洗衣篮;家居装饰;烛台;装饰摆件;托盘;保温杯;水壶;醒酒器;糖罐;面包盒;餐具收纳盒"
+  }
+}

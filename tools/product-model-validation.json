@@ -1,0 +1,93 @@
+{
+  "validation": {
+    "method": "stratified-holdout-20-percent-by-category-and-language",
+    "examples": 219,
+    "accuracy": 0.5205,
+    "confidentSuggestionThreshold": 0.65,
+    "minimumMargin": 0.2,
+    "confidentExamples": 35,
+    "confidentAccuracy": 0.9714
+  },
+  "acceptance": {
+    "ваза": {
+      "expected": "dishes",
+      "actual": "dishes",
+      "probability": 0.899
+    },
+    "стеклянная ваза для цветов": {
+      "expected": "dishes",
+      "actual": "dishes",
+      "probability": 0.856
+    },
+    "керамические вазочки": {
+      "expected": "dishes",
+      "actual": "dishes",
+      "probability": 0.595
+    },
+    "свитер": {
+      "expected": "textile",
+      "actual": "textile",
+      "probability": 0.7
+    },
+    "кабель для телефона": {
+      "expected": "electronics",
+      "actual": "electronics",
+      "probability": 0.732
+    },
+    "детская футболка": {
+      "expected": "children",
+      "actual": "children",
+      "probability": 0.814
+    },
+    "средство для мытья пола": {
+      "expected": "chemicals",
+      "actual": "chemicals",
+      "probability": 0.888
+    },
+    "пластиковая упаковка": {
+      "expected": "packaging",
+      "actual": "packaging",
+      "probability": 0.977
+    },
+    "vase": {
+      "expected": "dishes",
+      "actual": "dishes",
+      "probability": 0.811
+    },
+    "glass flower vase": {
+      "expected": "dishes",
+      "actual": "dishes",
+      "probability": 0.927
+    },
+    "cotton sweater": {
+      "expected": "textile",
+      "actual": "textile",
+      "probability": 0.634
+    },
+    "safety helmet": {
+      "expected": "protection",
+      "actual": "protection",
+      "probability": 0.858
+    },
+    "花瓶": {
+      "expected": "dishes",
+      "actual": "dishes",
+      "probability": 0.795
+    },
+    "陶瓷花瓶": {
+      "expected": "dishes",
+      "actual": "dishes",
+      "probability": 0.762
+    },
+    "童装": {
+      "expected": "children",
+      "actual": "children",
+      "probability": 0.707
+    },
+    "护手霜": {
+      "expected": "beauty",
+      "actual": "beauty",
+      "probability": 0.746
+    }
+  }
+}

@@ -1,0 +1,12 @@
+*
+!Dockerfile
+!index.html
+!style.css
+!app.js
+!languages.js
+!translations.js
+!product-classifier.js
+!deploy/
+!deploy/nginx.conf
+!assets/
+!assets/**
