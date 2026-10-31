@@ -22,4 +22,5 @@ class Tests(unittest.TestCase):
   with patch.dict(os.environ,{'VFC_MAIL_API_KEY':'test-only'}),patch('server.urlopen',side_effect=OSError('private details')):
    status,message=server.send_email({'name':'A','contact':'a@b.com','product':'B'})
    self.assertEqual(status,502);self.assertNotIn('private details',message)
-unittest.main()
+if __name__ == '__main__':
+ unittest.main()
