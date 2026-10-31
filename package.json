@@ -1,1 +1,0 @@
-{"name":"vfc-test","version":"1.0.0","private":true,"scripts":{"start":"python3 server.py","check":"node --check app.js"}}
