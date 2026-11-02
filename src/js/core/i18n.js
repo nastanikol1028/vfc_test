@@ -1,0 +1,252 @@
+let vfcLanguage = 'ru';
+try {
+  const saved = localStorage.getItem('vfc-language');
+  if (['ru', 'en', 'zh'].includes(saved)) vfcLanguage = saved;
+} catch {}
+const vfcNormalize = (value) => String(value).replace(/\s+/g, ' ').trim();
+const vfcTranslationIndex = new Map(
+  Object.entries(VFC_TRANSLATIONS).map(([source, target]) => [
+    vfcNormalize(source).toLocaleLowerCase('ru'),
+    target,
+  ]),
+);
+function vfcT(value) {
+  if (vfcLanguage === 'ru' || !value) return value;
+  const text = vfcNormalize(value),
+    direct = vfcTranslationIndex.get(text.toLocaleLowerCase('ru'));
+  if (direct) return direct[vfcLanguage];
+  let m;
+  if ((m = text.match(/^Вопрос (\d+) из 5$/)))
+    return vfcLanguage === 'en' ? `Question ${m[1]} of 5` : `第${m[1]}题，共5题`;
+  if ((m = text.match(/^Найдено категорий: (\d+)$/)))
+    return vfcLanguage === 'en' ? `Categories found: ${m[1]}` : `找到类别：${m[1]}`;
+  if ((m = text.match(/^(\d+) из 5 · ([\d.]+) МБ$/)))
+    return vfcLanguage === 'en' ? `${m[1]} of 5 · ${m[2]} MB` : `${m[1]}/5 · ${m[2]}MB`;
+  if ((m = text.match(/^Письмо с (\d+) фото готово$/)))
+    return vfcLanguage === 'en'
+      ? `Email with ${m[1]} photos is ready`
+      : `含${m[1]}张照片的邮件已准备好`;
+  if ((m = text.match(/^Удалить фото (.+)$/)))
+    return vfcLanguage === 'en' ? `Remove photo ${m[1]}` : `删除照片${m[1]}`;
+  if (
+    (m = text.match(
+      /^\. Это ориентир: требования зависят от точного назначения и состава товара\. Для продажи через «(.+)» обсудите с менеджером схему подтверждения и маркировку\.$/,
+    ))
+  )
+    return vfcLanguage === 'en'
+      ? `. This is initial guidance: requirements depend on the exact use and composition. For sales via “${vfcT(m[1])}”, discuss conformity assessment and labelling with your manager.`
+      : `。此结果仅供参考，具体要求取决于准确用途与成分。通过“${vfcT(m[1])}”销售时，请与经理讨论符合性评估及标签要求。`;
+  return value.replace(/ТР ТС/g, 'TR CU').replace(/ТР ЕАЭС/g, 'TR EAEU');
+}
+const vfcTextSources = new WeakMap(),
+  vfcAttributeSources = new WeakMap();
+let vfcTranslationObserver = null,
+  vfcApplyingLanguage = false;
+function vfcApplyLanguage() {
+  if (vfcApplyingLanguage || !document.body) return;
+  vfcApplyingLanguage = true;
+  if (vfcTranslationObserver) vfcTranslationObserver.disconnect();
+  try {
+    document.documentElement.lang = vfcLanguage === 'zh' ? 'zh-CN' : vfcLanguage;
+    document.documentElement.dataset.language = vfcLanguage;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        return node.parentElement?.closest('script,style,[data-language-ignore],textarea')
+          ? NodeFilter.FILTER_REJECT
+          : NodeFilter.FILTER_ACCEPT;
+      },
+    });
+    let node;
+    while ((node = walker.nextNode())) {
+      let record = vfcTextSources.get(node);
+      if (!record || node.nodeValue !== record.last)
+        record = { source: node.nodeValue, last: node.nodeValue };
+      const source = record.source,
+        translated = vfcT(source),
+        leading = source.match(/^\s*/)[0],
+        trailing = source.match(/\s*$/)[0];
+      const next = translated === source ? source : leading + translated + trailing;
+      if (node.nodeValue !== next) node.nodeValue = next;
+      record.last = next;
+      vfcTextSources.set(node, record);
+    }
+    document.querySelectorAll('[placeholder],[aria-label],[title]').forEach((element) => {
+      if (element.closest('[data-language-ignore]')) return;
+      let attrs = vfcAttributeSources.get(element) || {};
+      for (const attr of ['placeholder', 'aria-label', 'title']) {
+        if (!element.hasAttribute(attr)) continue;
+        const current = element.getAttribute(attr);
+        let record = attrs[attr];
+        if (!record || current !== record.last) record = { source: current, last: current };
+        const next = vfcT(record.source);
+        if (next !== current) element.setAttribute(attr, next);
+        record.last = next;
+        attrs[attr] = record;
+      }
+      vfcAttributeSources.set(element, attrs);
+    });
+    document.querySelectorAll('select option:not([value])').forEach((option) => {
+      const record = vfcTextSources.get(option.firstChild);
+      if (record) option.value = record.source.trim();
+    });
+    const hero = document.querySelector('img.home-art');
+    if (hero)
+      hero.src =
+        vfcLanguage === 'ru'
+          ? 'assets/home-hero-reference.webp'
+          : `assets/home-hero-${vfcLanguage}.svg`;
+    const languageButton = document.getElementById('lang');
+    if (languageButton) {
+      languageButton.querySelector('[data-language-code]').textContent = {
+        ru: 'RU',
+        en: 'EN',
+        zh: '中文',
+      }[vfcLanguage];
+      languageButton.setAttribute(
+        'aria-label',
+        { ru: 'Выбрать язык', en: 'Choose language', zh: '选择语言' }[vfcLanguage],
+      );
+    }
+    document
+      .querySelectorAll('[data-set-language]')
+      .forEach((button) =>
+        button.setAttribute('aria-checked', String(button.dataset.setLanguage === vfcLanguage)),
+      );
+    const heading = document.querySelector('main h1');
+    document.title = heading
+      ? heading.textContent.replace(/\s+/g, ' ').trim() + ' — VFC-TEST'
+      : {
+          ru: 'VFC-TEST — сертификация продукции',
+          en: 'VFC-TEST — product certification',
+          zh: 'VFC-TEST — 产品认证',
+        }[vfcLanguage];
+    if (typeof updateSeoMetadata === 'function') updateSeoMetadata();
+  } finally {
+    vfcApplyingLanguage = false;
+    if (vfcTranslationObserver)
+      vfcTranslationObserver.observe(document.body, {
+        subtree: true,
+        childList: true,
+        characterData: true,
+      });
+  }
+}
+function closeHeaderDropdowns(except) {
+  document.querySelectorAll('.header .navdrop>button,#lang').forEach((button) => {
+    if (button === except) return;
+    const menu = document.getElementById(button.getAttribute('aria-controls'));
+    if (menu) menu.hidden = true;
+    button.setAttribute('aria-expanded', 'false');
+  });
+}
+function initHeaderDropdowns() {
+  document.querySelectorAll('.header .navdrop>button,#lang').forEach((button) => {
+    const menu = document.getElementById(button.getAttribute('aria-controls'));
+    if (!menu) return;
+    button.addEventListener('click', () => {
+      const open = menu.hidden;
+      closeHeaderDropdowns();
+      menu.hidden = !open;
+      button.setAttribute('aria-expanded', String(open));
+    });
+    button.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        closeHeaderDropdowns(button);
+        menu.hidden = false;
+        button.setAttribute('aria-expanded', 'true');
+        menu.querySelector('a,button')?.focus();
+      }
+    });
+    menu.addEventListener('click', (event) => {
+      if (event.target.closest('a,button')) closeHeaderDropdowns();
+    });
+    menu.addEventListener('keydown', (event) => {
+      if (button.id === 'lang') return;
+      const options = Array.from(menu.querySelectorAll('a,button'));
+      const index = options.indexOf(document.activeElement);
+      if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) {
+        event.preventDefault();
+        const next =
+          event.key === 'Home'
+            ? 0
+            : event.key === 'End'
+              ? options.length - 1
+              : (index + (event.key === 'ArrowDown' ? 1 : -1) + options.length) % options.length;
+        options[next]?.focus();
+      }
+    });
+  });
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.navdrop,.language-switch')) closeHeaderDropdowns();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    const open = document.querySelector(
+      '.header .navdrop>button[aria-expanded="true"],#lang[aria-expanded="true"]',
+    );
+    if (open) {
+      closeHeaderDropdowns();
+      open.focus();
+    }
+  });
+}
+function initLanguageUI() {
+  const button = document.getElementById('lang'),
+    menu = document.getElementById('language-menu');
+  if (!button || !menu) return;
+  initHeaderDropdowns();
+  document.querySelectorAll('[data-set-language]').forEach((option) =>
+    option.addEventListener('click', () => {
+      vfcLanguage = option.dataset.setLanguage;
+      try {
+        localStorage.setItem('vfc-language', vfcLanguage);
+      } catch {}
+      closeHeaderDropdowns();
+      vfcApplyLanguage();
+      button.focus();
+    }),
+  );
+  menu.addEventListener('keydown', (event) => {
+    const options = Array.from(menu.querySelectorAll('[data-set-language]'));
+    let i = options.indexOf(document.activeElement);
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      options[(i + (event.key === 'ArrowDown' ? 1 : -1) + options.length) % options.length].focus();
+    }
+  });
+  if ('MutationObserver' in window) {
+    vfcTranslationObserver = new MutationObserver(() => vfcApplyLanguage());
+    vfcTranslationObserver.observe(document.body, {
+      subtree: true,
+      childList: true,
+      characterData: true,
+    });
+  }
+  vfcApplyLanguage();
+}
+
+const VFC_PRODUCT_SEARCH = {
+  packaging: 'packaging package box bag container 包装 容器 纸箱 盒子 袋子',
+  food: 'food milk bread fish drink 食品 食物 牛奶 面包 鱼 饮料',
+  beauty: 'beauty cosmetics perfume cream shampoo 化妆品 香水 面霜 洗发水',
+  textile:
+    'clothing clothes textile fabric sweater shirt dress linen 服装 衣服 纺织 面料 毛衣 衬衫 裙子 床品',
+  footwear: 'footwear shoes accessories bag boots sneakers 鞋类 鞋 配饰 包 靴子 运动鞋',
+  children: 'children child kids baby toys 儿童 婴儿 玩具',
+  equipment: 'equipment machinery machine industrial 设备 机械 机床 工业',
+  electronics: 'electronics electrical appliance laptop phone 电子 电气 电器 笔记本 手机',
+  furniture: 'furniture sofa chair table wardrobe 家具 沙发 椅子 桌子 衣柜',
+  protection: 'personal protective equipment ppe helmet gloves mask 防护 安全帽 手套 口罩',
+  chemicals: 'household chemicals detergent washing cleaning 日化 清洁剂 洗涤剂 清洗',
+  dishes:
+    'ваза вазочка вазы кашпо горшок подсвечник tableware dishes plastic plate cup pan vase flower pot candle holder 餐具 塑料 盘子 杯子 锅 花瓶 花盆 烛台',
+};
+function vfcProductMatches(card, query, dataKey) {
+  const id = card.getAttribute('href')?.split('/').pop();
+  const searchable = [card.dataset[dataKey] || '', card.textContent, VFC_PRODUCT_SEARCH[id] || '']
+    .join(' ')
+    .toLocaleLowerCase('ru')
+    .replace(/ё/g, 'е');
+  return query.split(/\s+/).every((word) => searchable.includes(word));
+}

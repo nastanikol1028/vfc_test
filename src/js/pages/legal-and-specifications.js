@@ -1,0 +1,20 @@
+// pages/legal-and-specifications.js
+const specifications = () =>
+  `${pageHero('Разработка ТУ', 'Разработка технических условий', 'Помогаем подготовить технические условия с учётом особенностей вашей продукции.')}<section class="section"><div class="wrap">${refRequest()}</div></section>`;
+
+const legalPage = (kind) => {
+  const titles = {
+    privacy: 'Политика конфиденциальности',
+    terms: 'Условия использования',
+    cookies: 'Использование файлов cookie',
+  };
+  const text = {
+    privacy:
+      'Данные, которые вы указываете в форме, используются для ответа на обращение. При отправке заявки контактные данные, описание и прикреплённые файлы передаются сервису Formspree для доставки обращения нашей команде. По вопросам обработки данных обращайтесь: m1@vfc-test.ru.',
+    terms:
+      'Информация на сайте носит справочный характер. Состав документов, стоимость и сроки работ согласовываются после анализа продукции и вашей задачи.',
+    cookies:
+      'Сайт не устанавливает аналитические или рекламные cookie. При переходе на внешние площадки действуют правила этих площадок.',
+  };
+  return `${pageHero(titles[kind], titles[kind], '')}<section class="section"><div class="wrap content"><p>${text[kind]}</p><a class="home-link" href="mailto:m1@vfc-test.ru">m1@vfc-test.ru</a></div></section>`;
+};

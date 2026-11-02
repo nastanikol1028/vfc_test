@@ -1,0 +1,113 @@
+/* maps-and-illustrations */
+.city-major {
+  z-index: 4;
+}
+.city-major .city-dot {
+  width: 8px;
+  height: 8px;
+  background: #246da9;
+}
+.city-major .city-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  background: #ffffffed;
+  border-color: #d6e6f2;
+  box-shadow: 0 3px 10px #245d8910;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  bottom: calc(100% + 3px);
+}
+.city-major[data-map-name='Москва'] .city-tooltip {
+  left: auto;
+  right: calc(100% + 3px);
+  bottom: 0;
+  transform: none;
+}
+.city-major[data-map-name='Казань'] .city-tooltip {
+  left: calc(100% + 3px);
+  bottom: -3px;
+  transform: none;
+}
+.city-major[data-map-name='Екатеринбург'] .city-tooltip {
+  bottom: calc(100% + 6px);
+}
+.city-major:hover .city-tooltip,
+.city-major:focus-visible .city-tooltip,
+.city-major[aria-expanded='true'] .city-tooltip {
+  transform: translate(-50%, 0);
+}
+.city-major[data-map-name='Москва']:hover .city-tooltip,
+.city-major[data-map-name='Москва']:focus-visible .city-tooltip,
+.city-major[data-map-name='Москва'][aria-expanded='true'] .city-tooltip,
+.city-major[data-map-name='Казань']:hover .city-tooltip,
+.city-major[data-map-name='Казань']:focus-visible .city-tooltip,
+.city-major[data-map-name='Казань'][aria-expanded='true'] .city-tooltip {
+  transform: none;
+}
+@media (max-width: 600px) {
+  .city-major .city-tooltip {
+    font-size: 9px;
+    padding: 3px 4px;
+    border-radius: 4px;
+  }
+  .city-major .city-dot {
+    width: 6px;
+    height: 6px;
+  }
+  .city-major[data-map-name='Москва'] .city-tooltip {
+    right: calc(100% - 2px);
+  }
+  .city-major[data-map-name='Казань'] .city-tooltip {
+    left: calc(100% - 2px);
+  }
+}
+
+.assistant-art-wrap {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  isolation: isolate;
+}
+.home-assistant .assistant-art-wrap > img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+.assistant-emblem {
+  position: absolute;
+  left: 44.5%;
+  top: 47.2%;
+  width: 18%;
+  aspect-ratio: 1;
+  border-radius: 28%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg, #3b89c8, #286eab);
+  color: #fff;
+  box-shadow: 0 15px 45px #276ca82b;
+  transform: translate(-50%, -50%) rotate(-10deg);
+  animation: assistant-emblem-turn 18s linear infinite;
+}
+.assistant-emblem svg {
+  width: 54%;
+  height: 54%;
+  display: block;
+  filter: drop-shadow(0 1px 2px #ffffff20);
+}
+@keyframes assistant-emblem-turn {
+  from {
+    transform: translate(-50%, -50%) rotate(-10deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(350deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .assistant-emblem {
+    animation: none;
+  }
+}

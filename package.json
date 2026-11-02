@@ -1,0 +1,35 @@
+{
+  "name": "vfc-test",
+  "version": "1.0.0",
+  "description": "VFC-TEST corporate website",
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "check": "node scripts/check.cjs",
+    "test": "npm run build && npm run check",
+    "dev": "npm run build && node scripts/serve.cjs",
+    "preview": "node scripts/serve.cjs",
+    "format": "prettier --write src scripts",
+    "format:check": "prettier --check src scripts",
+    "test:browser": "node scripts/smoke.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nastanikol1028/vfc_test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nastanikol1028/vfc_test/issues"
+  },
+  "homepage": "https://github.com/nastanikol1028/vfc_test#readme",
+  "devDependencies": {
+    "jsdom": "26.1.0",
+    "playwright-core": "1.56.1",
+    "prettier": "3.6.2"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  }
+}

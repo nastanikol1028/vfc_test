@@ -1,0 +1,164 @@
+/* partners-map-and-reviews */
+.partner-vector-map {
+  aspect-ratio: 816/460;
+  min-width: 0;
+  margin: 0;
+  background: radial-gradient(ellipse at center, #f1f8fd, transparent 75%);
+}
+.ref-partner-countries .partner-vector-map > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  aspect-ratio: 816/460;
+  object-fit: contain;
+  margin: 0;
+  mix-blend-mode: normal;
+}
+.partner-country-point {
+  z-index: 4;
+}
+.partner-country-point .city-dot {
+  width: 7px;
+  height: 7px;
+  background: #3278b8;
+}
+.partner-country-point .city-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  font-size: 12px;
+  bottom: calc(100% + 3px);
+  padding: 5px 8px;
+  box-shadow: 0 3px 12px #275e8510;
+  background: #ffffffed;
+}
+.partner-country-point[data-map-name='Армения'] .city-tooltip {
+  left: calc(100% + 2px);
+  right: auto;
+  bottom: -4px;
+  transform: none;
+}
+.partner-country-point[data-map-name='Кыргызстан'] .city-tooltip {
+  left: calc(100% + 2px);
+  bottom: -4px;
+  transform: none;
+}
+.partner-country-point[data-map-name='Армения']:hover .city-tooltip,
+.partner-country-point[data-map-name='Армения']:focus-visible .city-tooltip,
+.partner-country-point[data-map-name='Армения'][aria-expanded='true'] .city-tooltip,
+.partner-country-point[data-map-name='Кыргызстан']:hover .city-tooltip,
+.partner-country-point[data-map-name='Кыргызстан']:focus-visible .city-tooltip,
+.partner-country-point[data-map-name='Кыргызстан'][aria-expanded='true'] .city-tooltip {
+  transform: none;
+}
+@media (max-width: 600px) {
+  .partner-country-point .city-tooltip {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+  .partner-country-point .city-dot {
+    width: 6px;
+    height: 6px;
+  }
+  .ref-partner-countries {
+    gap: 20px;
+  }
+}
+
+.yandex-reviews-embed {
+  width: 100%;
+  max-width: 560px;
+  height: 800px;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+}
+.yandex-reviews-embed > iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #d6e4ef;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+.yandex-reviews-embed > .yandex-reviews-attribution {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #8a9aaa;
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+  padding: 0 16px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-height: 14px;
+  white-space: nowrap;
+  line-height: 14px;
+  background: #fff;
+}
+.home-review-panel > .yandex-reviews-embed {
+  max-width: none;
+}
+.ref-about-reviews {
+  padding: 30px;
+  background: linear-gradient(110deg, #f1f8fe, #fff);
+  border: 1px solid #d5e6f3;
+  border-radius: 22px;
+}
+.yandex-office-embed {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 440px;
+  border: 1px solid #d1e2ef;
+  border-radius: 15px;
+  background: #edf6fc;
+}
+.yandex-office-embed > iframe {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  z-index: 1;
+}
+.yandex-map-source,
+.yandex-map-category {
+  color: #7890a3;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: 12px;
+}
+.yandex-map-category {
+  top: 14px;
+}
+@media (max-width: 600px) {
+  .yandex-reviews-embed {
+    height: 700px;
+    border-radius: 12px;
+  }
+  .yandex-reviews-embed > iframe {
+    border-radius: 12px;
+  }
+  .ref-about-reviews {
+    padding: 12px;
+    border-radius: 17px;
+  }
+  .yandex-office-embed {
+    height: 360px;
+    border-radius: 12px;
+  }
+  .home-review-panel {
+    padding: 18px;
+  }
+}
