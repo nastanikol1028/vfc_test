@@ -1,0 +1,120 @@
+{
+  "reviewed": "2026-11-02",
+  "regulations": {
+    "44": {
+      "code": "ТР ТС 004/2011",
+      "title": "О безопасности низковольтного оборудования",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/Down_Volt.php"
+    },
+    "45": {
+      "code": "ТР ТС 005/2011",
+      "title": "О безопасности упаковки",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/bezopypakovki.php"
+    },
+    "47": {
+      "code": "ТР ТС 007/2011",
+      "title": "О безопасности продукции, предназначенной для детей и подростков",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/bezopDeti.php"
+    },
+    "48": {
+      "code": "ТР ТС 008/2011",
+      "title": "О безопасности игрушек",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/bezopToys.php"
+    },
+    "49": {
+      "code": "ТР ТС 009/2011",
+      "title": "О безопасности парфюмерно-косметической продукции",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/bezopParfum.php"
+    },
+    "50": {
+      "code": "ТР ТС 010/2011",
+      "title": "О безопасности машин и оборудования",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/bezopMashines.php"
+    },
+    "52": {
+      "code": "ТР ТС 012/2011",
+      "title": "О безопасности оборудования для работы во взрывоопасных средах",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/bezopOborydovVzrivredi.php"
+    },
+    "57": {
+      "code": "ТР ТС 017/2011",
+      "title": "О безопасности продукции легкой промышленности",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/bezopProductLegkProm.php"
+    },
+    "59": {
+      "code": "ТР ТС 019/2011",
+      "title": "О безопасности средств индивидуальной защиты",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/bezopSIZ.php"
+    },
+    "60": {
+      "code": "ТР ТС 020/2011",
+      "title": "Электромагнитная совместимость технических средств",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/EMS.php"
+    },
+    "61": {
+      "code": "ТР ТС 021/2011",
+      "title": "О безопасности пищевой продукции",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/PischevayaProd.php"
+    },
+    "62": {
+      "code": "ТР ТС 022/2011",
+      "title": "Пищевая продукция в части ее маркировки",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/PischevkaMarkirovka.php"
+    },
+    "65": {
+      "code": "ТР ТС 025/2012",
+      "title": "О безопасности мебельной продукции",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/bezopMebelProd.php"
+    },
+    "69": {
+      "code": "ТР ТС 029/2012",
+      "title": "Требования к безопасности пищевых добавок, ароматизаторов и технологических вспомогательных средств",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/bezopPischDobavok.php"
+    },
+    "72": {
+      "code": "ТР ТС 032/2013",
+      "title": "О безопасности оборудования, работающего под избыточным давлением",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/%D0%A2%D0%A0-%D0%A2%D0%A1-032.php"
+    },
+    "73": {
+      "code": "ТР ТС 033/2013",
+      "title": "О безопасности молока и молочной продукции",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/tr-ts-033.php"
+    },
+    "74": {
+      "code": "ТР ТС 034/2013",
+      "title": "О безопасности мяса и мясной продукции",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/tr-ts-034.php"
+    },
+    "77": {
+      "code": "ТР ЕАЭС 037/2016",
+      "title": "Об ограничении применения опасных веществ в изделиях электротехники и радиоэлектроники",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/TR_EEU_037.php"
+    },
+    "80": {
+      "code": "ТР ЕАЭС 040/2016",
+      "title": "О безопасности рыбы и рыбной продукции",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/TR_EEU_040_2016.php"
+    },
+    "84": {
+      "code": "ТР ЕАЭС 044/2017",
+      "title": "О безопасности упакованной питьевой воды, включая природную минеральную воду",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/tr_EAEU_044-2017.php"
+    },
+    "91": {
+      "code": "ТР ЕАЭС 051/2021",
+      "title": "О безопасности мяса птицы и продукции его переработки",
+      "url": "https://eec.eaeunion.org/comission/department/deptexreg/tr/TR_EAEU_051.php"
+    },
+    "2425": {
+      "code": "ПП РФ № 2425",
+      "title": "Перечни продукции для обязательной сертификации и декларирования по ГОСТ Р",
+      "url": "https://www.consultant.ru/document/cons_doc_LAW_405516/"
+    },
+    "299": {
+      "code": "Решение КТС № 299",
+      "title": "Единые санитарно-эпидемиологические и гигиенические требования",
+      "url": "https://www.consultant.ru/document/cons_doc_LAW_101851/"
+    }
+  }
+}
