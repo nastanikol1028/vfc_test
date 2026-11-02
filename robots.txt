@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vfc-test.indigoyew34.chatgpt.site/sitemap.xml
