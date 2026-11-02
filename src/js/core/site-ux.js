@@ -340,6 +340,7 @@ function enhanceTerminology(container = document.getElementById('app')) {
   target.append(row);
 }
 function finalizeRouteUI() {
+  enhanceMessengerLinks();
   closeMobileMenu();
   normalizeSiteLinks();
   enhanceTerminology();

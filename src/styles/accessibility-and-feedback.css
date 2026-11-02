@@ -273,3 +273,26 @@
     transition: none;
   }
 }
+
+/* Brand logos keep their own colors; text labels and destinations are preserved. */
+.messenger-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.messenger-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  object-fit: contain;
+}
+.header-messengers .messenger-icon {
+  width: 28px;
+  height: 28px;
+}
+.ref-messengers a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}

@@ -44,6 +44,7 @@
     "src/js/pages/document-quiz.js",
     "src/js/features/document-quiz.js",
     "src/js/features/document-assistant.js",
+    "src/js/components/messenger-links.js",
     "src/js/main.js"
   ],
   "styles": [
