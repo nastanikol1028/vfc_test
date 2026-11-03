@@ -4351,3 +4351,14 @@ Object.assign(VFC_TRANSLATIONS, {
     zh: 'VFC-TEST 专业人员在工作岗位上准备文件',
   },
 });
+
+Object.assign(VFC_TRANSLATIONS, {
+  'Специалист VFC-TEST консультирует клиента по телефону в офисе': {
+    en: 'A VFC-TEST specialist consulting a client by phone in the office',
+    zh: 'VFC-TEST 专业人员在办公室通过电话为客户提供咨询',
+  },
+  'Сотрудник VFC-TEST работает с сертификатами и документами на продукцию': {
+    en: 'A VFC-TEST employee working with certificates and product documentation',
+    zh: 'VFC-TEST 员工处理证书和产品文件',
+  },
+});

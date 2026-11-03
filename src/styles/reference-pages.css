@@ -1350,3 +1350,11 @@
   aspect-ratio: auto;
   object-fit: contain;
 }
+
+/* Preserve full real-office frames on the About page. */
+.ref-hero > .about-work-photo,
+.ref-office-photos > .about-work-photo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
