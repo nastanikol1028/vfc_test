@@ -4302,3 +4302,41 @@ Object.assign(VFC_TRANSLATIONS, {
     zh: '合作伙伴批发价目表申请',
   },
 });
+
+Object.assign(VFC_TRANSLATIONS, {
+  'Заказать звонок': { en: 'Request a call', zh: '预约回电' },
+  'Заказать звонок →': { en: 'Request a call →', zh: '预约回电 →' },
+  'Более 10 лет': { en: 'Over 10 years', zh: '超过10年' },
+  'на рынке': { en: 'in the market', zh: '行业经验' },
+  'Более 40 тыс.': { en: 'Over 40,000', zh: '超过4万' },
+  'обслуженных клиентов': { en: 'clients served', zh: '已服务客户' },
+  'Реестр СГР ↗': { en: 'State registration certificates ↗', zh: '国家注册证书登记簿 ↗' },
+  'Реестр нотификаций ↗': { en: 'Notification registry ↗', zh: '加密产品通报登记簿 ↗' },
+  'ЕАЭС · свидетельства о государственной регистрации': {
+    en: 'EAEU · state registration certificates',
+    zh: '欧亚经济联盟 · 国家注册证书',
+  },
+  'ЕАЭС · зарегистрированные нотификации': {
+    en: 'EAEU · registered notifications',
+    zh: '欧亚经济联盟 · 已注册通报',
+  },
+  'Оставьте имя и номер телефона — мы перезвоним вам в рабочее время.': {
+    en: 'Leave your name and phone number — we will call you during business hours.',
+    zh: '请留下姓名和电话号码，我们将在工作时间回电。',
+  },
+  'Номер телефона': { en: 'Phone number', zh: '电话号码' },
+  'Заказ обратного звонка': { en: 'Callback request', zh: '回电申请' },
+  'Обсудим вашу задачу по телефону': {
+    en: 'Let’s discuss your task by phone',
+    zh: '通过电话讨论您的需求',
+  },
+  'Оставьте контакт, и специалист свяжется с вами в рабочее время.': {
+    en: 'Leave your contact details and a specialist will call during business hours.',
+    zh: '请留下联系方式，专业人员将在工作时间与您联系。',
+  },
+  'Оставьте имя и телефон, чтобы обсудить оформление документов со специалистом VFC-TEST. Перезвоним в рабочее время.':
+    {
+      en: 'Leave your name and phone number to discuss documentation with a VFC-TEST specialist. We will call during business hours.',
+      zh: '请留下姓名和电话号码，与 VFC-TEST 专业人员讨论文件办理。我们将在工作时间回电。',
+    },
+});

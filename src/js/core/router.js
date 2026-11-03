@@ -38,12 +38,13 @@ function render() {
   else if (section === 'cases') app.innerHTML = cases();
   else if (section === 'articles') app.innerHTML = articles();
   else if (section === 'contacts') app.innerHTML = refContacts();
+  else if (section === 'callback') app.innerHTML = callbackPage();
   else if (section === 'request') app.innerHTML = request();
   else if (section === 'select') app.innerHTML = select();
   else app.innerHTML = siteNotFound();
   document
     .querySelector('.floating')
-    ?.classList.toggle('hidden', ['select', 'request'].includes(section));
+    ?.classList.toggle('hidden', ['select', 'request', 'callback'].includes(section));
   document.getElementById('navlinks').classList.remove('open');
   if (typeof closeHeaderDropdowns === 'function') closeHeaderDropdowns();
   document.getElementById('menu').setAttribute('aria-expanded', 'false');

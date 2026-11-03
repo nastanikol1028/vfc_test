@@ -13,6 +13,7 @@ const VFC_ROUTE_ROOTS = [
   'specifications',
   'marketplaces',
   'request',
+  'callback',
   'select',
   'guide',
   'reviews',
@@ -68,6 +69,10 @@ function syncLegacyLocation(route) {
     history.replaceState(null, '', cleanSitePath(route));
 }
 const VFC_PAGE_META = {
+  callback: [
+    'Заказать звонок',
+    'Оставьте имя и телефон, чтобы обсудить оформление документов со специалистом VFC-TEST. Перезвоним в рабочее время.',
+  ],
   '': [
     'Сертификация и декларирование продукции',
     'Помогаем оформить документы на продукцию для России и ЕАЭС: сертификация, декларации, испытания. Подбор требований и сопровождение оформления.',
@@ -178,7 +183,7 @@ function routeSeoData(route = getSiteRoute()) {
   return {
     title: vfcT(title),
     description: vfcT(description),
-    noindex: ['request', 'select'].includes(root),
+    noindex: ['request', 'select', 'callback'].includes(root),
   };
 }
 function updateSeoMetadata() {
