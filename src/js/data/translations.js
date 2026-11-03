@@ -3993,3 +3993,116 @@ Object.assign(VFC_TRANSLATIONS, {
     zh: '我们将签发完成的文件并在登记系统中发布。',
   },
 });
+
+Object.assign(VFC_TRANSLATIONS, {
+  'Фотографии продукции и шильдика — при наличии': {
+    en: 'Product and nameplate photos, if available',
+    zh: '产品和铭牌照片（如有）',
+  },
+  'Фотографии продукции и этикетки — при наличии': {
+    en: 'Product and label photos, if available',
+    zh: '产品和标签照片（如有）',
+  },
+  'Наименование продукции, возрастная группа, код ТН ВЭД и модельный ряд': {
+    en: 'Product name, age group, HS code and model range',
+    zh: '产品名称、适用年龄段、海关编码和型号系列',
+  },
+  'ТУ, СТО или спецификация на упаковку — при наличии': {
+    en: 'Technical specifications, organization standard or packaging specification, if available',
+    zh: '技术条件、企业标准或包装规格书（如有）',
+  },
+  'ТУ, СТО, рецептура или технологическая инструкция — при наличии': {
+    en: 'Technical specifications, organization standard, recipe or production instructions, if available',
+    zh: '技术条件、企业标准、配方或工艺说明（如有）',
+  },
+  'ТУ, рецептура и инструкция по применению — при наличии': {
+    en: 'Technical specifications, formulation and instructions for use, if available',
+    zh: '技术条件、配方和使用说明（如有）',
+  },
+  'ТУ, СТО или техническое описание изделий — при наличии': {
+    en: 'Technical specifications, organization standard or product description, if available',
+    zh: '技术条件、企业标准或产品技术说明（如有）',
+  },
+  'ТУ или техническое описание изделий — при наличии': {
+    en: 'Technical specifications or product description, if available',
+    zh: '技术条件或产品技术说明（如有）',
+  },
+  'ТУ, техническое описание и инструкция по применению — при наличии': {
+    en: 'Technical specifications, technical description and instructions for use, if available',
+    zh: '技术条件、技术说明和使用说明（如有）',
+  },
+  'ТУ, СТО, паспорт, руководство по эксплуатации и техническое руководство — при наличии': {
+    en: 'Technical specifications, organization standard, product passport, operating manual and technical manual, if available',
+    zh: '技术条件、企业标准、产品护照、操作手册和技术手册（如有）',
+  },
+  'ТУ, паспорт изделия и инструкция по сборке — при наличии': {
+    en: 'Technical specifications, product passport and assembly instructions, if available',
+    zh: '技术条件、产品护照和组装说明（如有）',
+  },
+  'ТУ, СТО, паспорт безопасности и инструкция по применению — при наличии': {
+    en: 'Technical specifications, organization standard, safety data sheet and instructions for use, if available',
+    zh: '技术条件、企业标准、安全数据表和使用说明（如有）',
+  },
+  'ТУ, описание материалов и инструкция по применению — при наличии': {
+    en: 'Technical specifications, material description and instructions for use, if available',
+    zh: '技术条件、材料说明和使用说明（如有）',
+  },
+  'Укажите, нужна ли разработка ТУ, СТО, паспорта, руководства по эксплуатации или технического руководства':
+    {
+      en: 'Please indicate whether you need technical specifications, an organization standard, product passport, operating manual or technical manual developed',
+      zh: '请说明是否需要编制技术条件、企业标准、产品护照、操作手册或技术手册',
+    },
+  'Насосы и насосные установки': { en: 'Pumps and pumping units', zh: '泵及泵组' },
+  'Насосы для жидкостей; учитываем рабочую среду, привод и условия эксплуатации': {
+    en: 'Liquid pumps: we consider the working medium, drive and operating conditions',
+    zh: '液体泵：考虑工作介质、驱动方式和运行条件',
+  },
+  'Пищевое оборудование': { en: 'Food processing equipment', zh: '食品加工设备' },
+  'Смесители, тестомесы и машины для переработки пищевой продукции': {
+    en: 'Mixers, dough kneaders and food processing machines',
+    zh: '搅拌机、和面机及食品加工机械',
+  },
+  'Упаковочное оборудование': { en: 'Packaging equipment', zh: '包装设备' },
+  'Фасовочные, дозировочные и упаковочные машины': {
+    en: 'Filling, dosing and packaging machines',
+    zh: '灌装、计量和包装机械',
+  },
+  'Конвейеры и транспортёры': { en: 'Conveyors and transport systems', zh: '输送机和传送设备' },
+  'Ленточные, роликовые и другие транспортирующие машины': {
+    en: 'Belt, roller and other conveying machinery',
+    zh: '带式、辊式及其他输送机械',
+  },
+  'Вентиляционное оборудование': { en: 'Ventilation equipment', zh: '通风设备' },
+  'Промышленные вентиляторы и вентиляционные установки': {
+    en: 'Industrial fans and ventilation units',
+    zh: '工业风机和通风装置',
+  },
+  'Деревообрабатывающие станки': { en: 'Woodworking machines', zh: '木工机床' },
+  'Пильные, строгальные и фрезерные станки для обработки древесины': {
+    en: 'Sawing, planing and milling machines for woodworking',
+    zh: '木材加工用锯切、刨削和铣削机床',
+  },
+  'Для перечисленных машин проверяем область применения ТР ТС 010/2011. ТР ТС 004/2011 и 020/2011 применяем с учётом электрических характеристик и конструкции; ТР ТС 012/2011 и 032/2013 — при наличии соответствующих условий и параметров.':
+    {
+      en: 'For these machines we check the scope of TR CU 010/2011. TR CU 004/2011 and 020/2011 depend on electrical characteristics and design; TR CU 012/2011 and 032/2013 apply where the relevant conditions and parameters are present.',
+      zh: '对于所列机械，我们核实 TR CU 010/2011 的适用范围。TR CU 004/2011 和 020/2011 根据电气参数和结构适用；TR CU 012/2011 和 032/2013 则取决于相应条件和参数。',
+    },
+  'Осветительное оборудование': { en: 'Lighting equipment', zh: '照明设备' },
+  'Светильники, прожекторы и светодиодные источники света': {
+    en: 'Luminaires, floodlights and LED light sources',
+    zh: '灯具、投光灯及 LED 光源',
+  },
+  'Электродвигатели и приводы': { en: 'Electric motors and drives', zh: '电动机和驱动装置' },
+  'Электрические двигатели и комплектные приводы; проверяем конструкцию и назначение': {
+    en: 'Electric motors and complete drives: we check the design and intended use',
+    zh: '电动机及成套驱动装置：核实结构和用途',
+  },
+  'Щиты и устройства управления': {
+    en: 'Switchboards and control devices',
+    zh: '配电盘及控制装置',
+  },
+  'Распределительные щиты, шкафы автоматики и устройства управления': {
+    en: 'Distribution boards, automation cabinets and control devices',
+    zh: '配电盘、自动化控制柜和控制装置',
+  },
+});

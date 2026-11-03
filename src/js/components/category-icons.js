@@ -104,3 +104,34 @@ const categoryIconMapping = {
   'footwear-2': 'childshoe',
   'footwear-3': 'bag',
 };
+
+Object.assign(categoryIconDrawings, {
+  pump: '<path d="M12 75H86M19 75V68M79 75V68"/><circle cx="37" cy="50" r="20" fill="#dcecf8"/><circle cx="37" cy="50" r="9" fill="white"/><path d="M17 47H8V61H23M35 30V14H50V32"/><rect x="56" y="35" width="27" height="31" rx="5" fill="#eaf4fb"/><path d="M62 40V61M69 40V61M76 40V61M57 52H51"/>',
+  mixer:
+    '<path d="M24 40H73V66Q73 83 49 83Q24 83 24 66Z" fill="#dcecf8"/><path d="M24 40Q49 31 73 40M49 13V66M39 59H60M31 79L26 91M66 79L72 91"/><rect x="39" y="7" width="20" height="20" rx="4" fill="#eaf4fb"/>',
+  packing:
+    '<rect x="15" y="32" width="66" height="46" rx="5" fill="#eaf4fb"/><path d="M22 78V89M74 78V89M30 32V14H63V32M30 14L46 28L63 14M46 28V46"/><rect x="34" y="50" width="27" height="22" rx="3" fill="#dcecf8"/><path d="M39 57H56M21 43H29"/>',
+  conveyor:
+    '<rect x="8" y="42" width="80" height="22" rx="11" fill="#dcecf8"/><circle cx="20" cy="53" r="6"/><circle cx="76" cy="53" r="6"/><path d="M26 53H70M23 64L17 86M73 64L79 86"/><rect x="29" y="20" width="23" height="22" rx="2" fill="#eaf4fb"/><path d="M40 20V29M57 31H72V42"/>',
+  fan: '<rect x="13" y="14" width="70" height="70" rx="9" fill="#eaf4fb"/><circle cx="48" cy="49" r="26"/><path d="M48 43Q23 23 37 24Q54 23 53 43M54 49Q80 30 75 46Q71 63 54 55M46 55Q44 83 33 70Q22 56 41 50" fill="#dcecf8"/><circle cx="48" cy="49" r="7" fill="white"/><path d="M22 89H74"/>',
+  saw: '<path d="M14 49H83V61H14Z" fill="#dcecf8"/><path d="M24 61L19 87M73 61L78 87M25 73H73"/><path d="M34 49A18 18 0 0 1 70 49" fill="#eaf4fb"/><path d="M52 31V49M39 36L45 43M65 36L59 43M22 23H38V47M13 19H41"/>',
+  light:
+    '<path d="M26 38Q26 17 48 17Q70 17 70 38Q70 51 59 61V71H37V61Q26 51 26 38Z" fill="#dcecf8"/><path d="M38 77H58M42 84H54M43 69V48L36 41M53 69V48L60 41M48 5V10M14 20L20 26M76 20L82 14M9 44H17M79 44H87"/>',
+  panel:
+    '<rect x="23" y="9" width="52" height="79" rx="5" fill="#eaf4fb"/><path d="M23 29H75M49 29V88"/><rect x="31" y="16" width="20" height="7" rx="2" fill="#dcecf8"/><circle cx="63" cy="19" r="3"/><path d="M42 48V60M56 48V60M31 75H40M57 75H67"/><path d="M34 37L30 47H37L33 55"/>',
+});
+Object.assign(categoryIconMapping, {
+  'equipment-pump': 'pump',
+  'equipment-food': 'mixer',
+  'equipment-packing': 'packing',
+  'equipment-conveyor': 'conveyor',
+  'equipment-fan': 'fan',
+  'equipment-wood': 'saw',
+  'electronics-light': 'light',
+  'electronics-motor': 'pressure',
+  'electronics-panel': 'panel',
+});
+
+categoryIconDrawings.motor =
+  '<rect x="25" y="27" width="49" height="43" rx="8" fill="#dcecf8"/><path d="M34 32V65M44 32V65M54 32V65M64 32V65M25 41H12V56H25M74 41H87V56H74M31 70L26 82H76L69 70"/><rect x="40" y="15" width="23" height="12" rx="3" fill="#eaf4fb"/>';
+categoryIconMapping['electronics-motor'] = 'motor';
