@@ -4283,3 +4283,22 @@ Object.assign(VFC_TRANSLATIONS, {
       zh: '我们为每位客户提供个性化服务，考虑产品特点、业务需求和项目优先事项。我们的团队全部由经验丰富的认证专业人员组成。',
     },
 });
+
+Object.assign(VFC_TRANSLATIONS, {
+  'Работаем не только напрямую с производителями и импортёрами. Помогаем таможенным брокерам, логистическим компаниям, агентам и посредникам организовать оформление документов для их клиентов и упрощаем процедуру сертификации.':
+    {
+      en: 'We work directly with manufacturers and importers, and help customs brokers, logistics companies, agents and intermediaries arrange documents for their clients and simplify certification.',
+      zh: '我们不仅直接服务于制造商和进口商，也协助报关代理、物流公司、代理商和中间人为其客户办理文件，简化认证流程。',
+    },
+  'Есть действующие клиенты? Поможем предоставить им любые разрешительные документы по персональным тарифам и гарантируем быструю выплату агентских.':
+    {
+      en: 'Have existing clients? We can help provide them with any required permits at individual rates and guarantee prompt payment of agent commissions.',
+      zh: '已有长期客户？我们将按专属费率协助提供各类所需许可文件，并保证快速支付代理佣金。',
+    },
+  'Запросить оптовый прайс': { en: 'Request wholesale pricing', zh: '获取批发价目表' },
+  'Получить оптовый прайс →': { en: 'Get wholesale pricing →', zh: '获取批发价目表 →' },
+  'Запрос оптового прайса для партнёра': {
+    en: 'Partner wholesale pricing request',
+    zh: '合作伙伴批发价目表申请',
+  },
+});
