@@ -4362,3 +4362,10 @@ Object.assign(VFC_TRANSLATIONS, {
     zh: 'VFC-TEST 员工处理证书和产品文件',
   },
 });
+
+Object.assign(VFC_TRANSLATIONS, {
+  'Вход в офис VFC-TEST: дверь 1417 и табличка компании': {
+    en: 'VFC-TEST office entrance: door 1417 and company sign',
+    zh: 'VFC-TEST 办公室入口：1417号门和公司标牌',
+  },
+});

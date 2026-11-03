@@ -1358,3 +1358,10 @@
   height: auto;
   object-fit: contain;
 }
+
+/* Keep the entrance sign and office number visible in the full photograph. */
+.ref-contact-hero > .contact-office-photo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
