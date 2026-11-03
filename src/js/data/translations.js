@@ -4265,3 +4265,21 @@ Object.assign(VFC_TRANSLATIONS, {
       zh: '适用于第2425号决议相应清单中的日用化学品。根据用途、成分及具体产品类型核实要求的适用性。',
     },
 });
+
+Object.assign(VFC_TRANSLATIONS, {
+  'Объединяем возможности разных органов по сертификации и испытательных лабораторий. Благодаря этому помогаем решать широкий круг задач по оформлению документов на продукцию.':
+    {
+      en: 'We bring together the capabilities of different certification bodies and testing laboratories. This allows us to help with a wide range of product documentation tasks.',
+      zh: '我们整合不同认证机构和检测实验室的能力，协助解决各类产品文件办理需求。',
+    },
+  'Наше главное преимущество — выбор вариантов оформления с учётом вашего бюджета и необходимых сроков. Мы не только определяем, какой документ нужен и сколько он стоит, но и предлагаем подходящие пути его получения в рамках действующих требований.':
+    {
+      en: 'Our main advantage is a choice of preparation options that take your budget and required timeframe into account. We identify the document you need and its cost, and suggest suitable ways to obtain it within the applicable requirements.',
+      zh: '我们的主要优势是根据您的预算和所需时间提供不同办理方案。我们不仅确定所需文件和费用，还会在现行要求范围内提出合适的办理途径。',
+    },
+  'К каждому клиенту подходим индивидуально: учитываем особенности продукции, задачи бизнеса и приоритеты проекта. В нашей команде работают только опытные специалисты в сфере сертификации.':
+    {
+      en: 'We take an individual approach to every client, considering product specifics, business needs and project priorities. Our team consists entirely of experienced certification specialists.',
+      zh: '我们为每位客户提供个性化服务，考虑产品特点、业务需求和项目优先事项。我们的团队全部由经验丰富的认证专业人员组成。',
+    },
+});
