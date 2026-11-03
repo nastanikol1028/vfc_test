@@ -1341,3 +1341,12 @@
     transform: none;
   }
 }
+
+/* Keep the real office photographs fully visible at every breakpoint. */
+.ref-hero > .how-work-photo,
+.ref-manager > .how-work-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}

@@ -1,7 +1,7 @@
 // pages/how-it-works.js
 const refHow = () =>
   refWrap(
-    `${refCrumb('Как работаем')}<section class="ref-hero"><div><h1>От первого вопроса до готовых документов</h1><p>Расскажите о продукции и задаче. Определим порядок работы, подберем исполнителей и будем на связи на каждом этапе.</p>${refButton()}</div><img src="assets/process-documents.webp" alt="Подготовленные документы и рабочее место специалиста" width="1860" height="846"></section><section class="ref-section"><h2>Пять этапов работы</h2><div class="ref-stage-list">${[
+    `${refCrumb('Как работаем')}<section class="ref-hero"><div><h1>От первого вопроса до готовых документов</h1><p>Расскажите о продукции и задаче. Определим порядок работы, подберем исполнителей и будем на связи на каждом этапе.</p>${refButton()}</div><img class="how-work-photo" src="assets/how-work-team.webp" alt="Сотрудники VFC-TEST работают с документами в офисе" width="1448" height="1086"></section><section class="ref-section"><h2>Пять этапов работы</h2><div class="ref-stage-list">${[
       [
         'Знакомимся с задачей',
         'Уточняем, что вы производите или ввозите, где планируете продавать товар и для чего нужны документы.',
@@ -39,7 +39,7 @@ const refHow = () =>
       )
       .join(
         '',
-      )}</div></section><section class="ref-section"><h2>Один менеджер на весь проект</h2><div class="ref-two ref-manager"><img src="assets/project-manager.webp" alt="Менеджер координирует работу над документами" loading="lazy"><div>${[
+      )}</div></section><section class="ref-section"><h2>Один менеджер на весь проект</h2><div class="ref-two ref-manager"><img class="how-work-photo" src="assets/how-work-manager.webp" alt="Специалист VFC-TEST готовит документы на рабочем месте" width="1448" height="1086" loading="lazy"><div>${[
       [
         'Собираем информацию',
         'Уточняем детали, отвечаем на вопросы и помогаем подготовить исходные данные.',

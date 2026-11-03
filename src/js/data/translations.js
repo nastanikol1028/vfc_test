@@ -4340,3 +4340,14 @@ Object.assign(VFC_TRANSLATIONS, {
       zh: '请留下姓名和电话号码，与 VFC-TEST 专业人员讨论文件办理。我们将在工作时间回电。',
     },
 });
+
+Object.assign(VFC_TRANSLATIONS, {
+  'Сотрудники VFC-TEST работают с документами в офисе': {
+    en: 'VFC-TEST employees working on documents in the office',
+    zh: 'VFC-TEST 员工在办公室处理文件',
+  },
+  'Специалист VFC-TEST готовит документы на рабочем месте': {
+    en: 'A VFC-TEST specialist preparing documents at their workstation',
+    zh: 'VFC-TEST 专业人员在工作岗位上准备文件',
+  },
+});
