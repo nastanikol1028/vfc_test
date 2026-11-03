@@ -135,3 +135,68 @@ Object.assign(categoryIconMapping, {
 categoryIconDrawings.motor =
   '<rect x="25" y="27" width="49" height="43" rx="8" fill="#dcecf8"/><path d="M34 32V65M44 32V65M54 32V65M64 32V65M25 41H12V56H25M74 41H87V56H74M31 70L26 82H76L69 70"/><rect x="40" y="15" width="23" height="12" rx="3" fill="#eaf4fb"/>';
 categoryIconMapping['electronics-motor'] = 'motor';
+
+Object.assign(categoryIconDrawings, {
+  can: '<ellipse cx="48" cy="23" rx="25" ry="8" fill="#eaf4fb"/><path d="M23 23V76Q48 91 73 76V23M23 33Q48 48 73 33M23 68Q48 83 73 68" fill="#dcecf8"/><ellipse cx="48" cy="23" rx="25" ry="8"/><path d="M38 22H58"/>',
+  crate:
+    '<path d="M13 29L45 15L83 30V75L49 88L13 73Z" fill="#eaf4fb"/><path d="M13 29L49 43L83 30M49 43V88M13 43L49 57L83 44M13 59L49 73L83 60M22 32L39 77M58 40L75 72"/>',
+  caps: '<ellipse cx="31" cy="40" rx="21" ry="9" fill="#dcecf8"/><path d="M10 40V59Q31 73 52 59V40M17 47V58M25 49V61M34 49V61M43 47V58"/><ellipse cx="68" cy="64" rx="18" ry="8" fill="#eaf4fb"/><path d="M50 64V76Q68 88 86 76V64M59 69V78M68 71V80M77 69V78"/>',
+  fruit:
+    '<path d="M42 35Q23 18 15 39Q7 67 29 82Q35 86 42 81Q52 86 59 77Q74 58 63 39Q56 25 42 35Z" fill="#dcecf8"/><path d="M42 35Q40 20 47 14M45 23Q62 10 66 22Q57 31 45 23M63 55Q76 35 85 50Q94 68 76 83Q66 88 60 77"/>',
+  candy:
+    '<rect x="29" y="27" width="39" height="48" rx="7" fill="#dcecf8"/><path d="M29 36L14 25V47L29 43M68 36L83 25V47L68 43M37 40H60M37 51H60M37 62H60"/><path d="M29 64L15 75V54L29 57M68 64L82 75V54L68 57"/>',
+  bottles:
+    '<path d="M21 22H34V36Q43 43 43 51V80Q43 85 37 85H17Q11 85 11 80V51Q11 43 21 36Z" fill="#dcecf8"/><rect x="19" y="13" width="17" height="9" rx="2"/><path d="M12 55H42V72H12M63 29H76V41Q85 47 85 56V80Q85 85 79 85H60Q54 85 54 80V56Q54 47 63 41Z" fill="#eaf4fb"/><rect x="61" y="21" width="17" height="8" rx="2"/><path d="M55 59H84V74H55"/>',
+  toothpaste:
+    '<path d="M19 18H51L48 70H23Z" fill="#dcecf8"/><rect x="26" y="70" width="19" height="12" rx="2"/><path d="M19 26H51M27 39H43M27 48H42M70 83V25"/><rect x="62" y="11" width="17" height="26" rx="5" fill="#eaf4fb"/><path d="M63 17H78M63 23H78M63 29H78"/>',
+  boot: '<path d="M30 12H59V55Q66 65 80 66Q89 66 89 77V84H16V72Q16 62 29 57Z" fill="#dcecf8"/><path d="M30 22H59M16 77H88M42 34H55M42 43H55M42 52H55"/>',
+  sneaker:
+    '<path d="M13 47L28 34Q36 53 49 49L62 41Q67 57 80 62Q88 66 88 76H11V59Z" fill="#eaf4fb"/><path d="M11 76V83H88V76M38 51L46 60M48 49L56 58M59 48L66 58M13 57Q24 58 29 71"/>',
+  stroller:
+    '<path d="M23 42Q23 15 52 15V42Z" fill="#dcecf8"/><path d="M23 42H78Q76 65 53 65Q30 65 23 42Z" fill="#eaf4fb"/><path d="M67 42L79 21H89M36 64L68 82M66 63L34 82"/><circle cx="31" cy="83" r="8"/><circle cx="72" cy="83" r="8"/>',
+  notebook:
+    '<rect x="18" y="15" width="50" height="69" rx="5" fill="#dcecf8"/><path d="M29 15V84M37 33H59M37 44H59M37 55H53M14 25H23M14 39H23M14 53H23M14 67H23M76 22L84 25L72 74L65 81L64 71Z" fill="#eaf4fb"/>',
+  kitchen:
+    '<rect x="10" y="16" width="76" height="27" rx="3" fill="#eaf4fb"/><rect x="10" y="55" width="76" height="31" rx="3" fill="#dcecf8"/><path d="M10 52H86M34 16V43M61 16V43M39 55V86M66 55V86M26 25V34M53 25V34M30 64V75M57 64V75M73 64H79M21 47V53M19 47Q19 41 26 41"/>',
+  cabinet:
+    '<rect x="21" y="11" width="55" height="76" rx="4" fill="#eaf4fb"/><path d="M48 11V87M39 44V58M57 44V58M28 22H40M28 27H40M56 22H68M56 27H68M28 74H40M56 74H68"/>',
+  harness:
+    '<path d="M26 15L43 42H53L70 15L79 21L60 52L72 78L60 84L48 63L36 84L24 78L36 52L17 21Z" fill="#dcecf8"/><rect x="38" y="43" width="20" height="15" rx="3" fill="white"/><path d="M48 43V58M33 70L41 74M56 74L64 70"/>',
+  earmuffs:
+    '<path d="M17 54V42Q17 10 48 10Q79 10 79 42V54M24 45V40Q24 18 48 18Q72 18 72 40V45"/><rect x="10" y="42" width="23" height="37" rx="9" fill="#dcecf8"/><rect x="63" y="42" width="23" height="37" rx="9" fill="#dcecf8"/><path d="M21 51V70M75 51V70"/>',
+  dispenser:
+    '<rect x="25" y="37" width="46" height="48" rx="8" fill="#dcecf8"/><path d="M38 37V24H58V37M48 24V14H73V22M48 14H32M38 54H58V72H38"/><path d="M48 58V68M43 63H53M78 28Q89 40 80 43Q73 43 78 28" fill="#eaf4fb"/>',
+  glassware:
+    '<path d="M14 15H48L44 43Q31 59 18 43Z" fill="#eaf4fb"/><path d="M31 50V82M19 83H43M17 29H46M63 37H87L84 79Q75 88 66 79Z" fill="#dcecf8"/><path d="M65 48H86"/>',
+});
+categoryIconDrawings.gloves = categoryIconDrawings.glove;
+categoryIconDrawings.dishes = categoryIconDrawings.plate;
+Object.assign(categoryIconMapping, {
+  'packaging-extra-3': 'can',
+  'packaging-extra-4': 'crate',
+  'packaging-extra-5': 'caps',
+  'food-extra-3': 'fruit',
+  'food-extra-4': 'candy',
+  'food-extra-5': 'bottles',
+  'beauty-extra-3': 'toothpaste',
+  'beauty-extra-4': 'shampoo',
+  'beauty-extra-5': 'cream',
+  'footwear-extra-3': 'boot',
+  'footwear-extra-4': 'sneaker',
+  'footwear-extra-5': 'boot',
+  'children-extra-3': 'sneaker',
+  'children-extra-4': 'stroller',
+  'children-extra-5': 'notebook',
+  'furniture-extra-3': 'kitchen',
+  'furniture-extra-4': 'desk',
+  'furniture-extra-5': 'cabinet',
+  'protection-extra-3': 'harness',
+  'protection-extra-4': 'earmuffs',
+  'protection-extra-5': 'gloves',
+  'chemicals-extra-3': 'spray',
+  'chemicals-extra-4': 'dispenser',
+  'chemicals-extra-5': 'spray',
+  'dishes-extra-3': 'glassware',
+  'dishes-extra-4': 'dishes',
+  'dishes-extra-5': 'babybottle',
+});

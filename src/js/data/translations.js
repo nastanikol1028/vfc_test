@@ -4106,3 +4106,162 @@ Object.assign(VFC_TRANSLATIONS, {
     zh: '配电盘、自动化控制柜和控制装置',
   },
 });
+
+Object.assign(VFC_TRANSLATIONS, {
+  'Металлическая упаковка': { en: 'Metal packaging', zh: '金属包装' },
+  'Банки, бочки и металлическая тара': {
+    en: 'Cans, drums and metal containers',
+    zh: '金属罐、桶及容器',
+  },
+  'Деревянная упаковка': { en: 'Wooden packaging', zh: '木制包装' },
+  'Ящики, поддоны и деревянная транспортная тара': {
+    en: 'Crates, pallets and wooden transport packaging',
+    zh: '木箱、托盘及木制运输包装',
+  },
+  'Укупорочные средства': { en: 'Closures', zh: '封口材料' },
+  'Крышки, пробки и другие средства укупоривания': {
+    en: 'Lids, stoppers and other closures',
+    zh: '盖、塞及其他封口用品',
+  },
+  'Овощи, фрукты и продукты переработки': {
+    en: 'Fruit, vegetables and processed products',
+    zh: '果蔬及其加工制品',
+  },
+  'Свежая, замороженная и консервированная продукция': {
+    en: 'Fresh, frozen and preserved produce',
+    zh: '新鲜、冷冻及罐装产品',
+  },
+  'Кондитерские изделия': { en: 'Confectionery', zh: '糖果糕点' },
+  'Шоколад, конфеты, печенье и сладости': {
+    en: 'Chocolate, sweets, biscuits and confectionery',
+    zh: '巧克力、糖果、饼干及甜食',
+  },
+  'Напитки и питьевая вода': { en: 'Beverages and drinking water', zh: '饮料和饮用水' },
+  'Безалкогольные напитки и упакованная питьевая вода; требования зависят от вида продукции': {
+    en: 'Soft drinks and packaged drinking water; requirements depend on product type',
+    zh: '非酒精饮料及包装饮用水；要求取决于产品类型',
+  },
+  'Средства гигиены полости рта': { en: 'Oral care products', zh: '口腔护理用品' },
+  'Зубные пасты и ополаскиватели; учитываем состав и назначение': {
+    en: 'Toothpaste and mouthwash; we consider formulation and intended use',
+    zh: '牙膏和漱口水；考虑成分和用途',
+  },
+  'Средства для ванны и душа': { en: 'Bath and shower products', zh: '沐浴用品' },
+  'Гели для душа, косметическое мыло и пены для ванн': {
+    en: 'Shower gels, cosmetic soaps and bath foams',
+    zh: '沐浴露、化妆香皂及泡泡浴用品',
+  },
+  'Детская косметика': { en: 'Children’s cosmetics', zh: '儿童化妆品' },
+  'Кремы, шампуни и средства ухода для детей; проверяем необходимость государственной регистрации':
+    {
+      en: 'Creams, shampoos and care products for children; we check state registration requirements',
+      zh: '儿童面霜、洗发水及护理用品；核实是否需要国家注册',
+    },
+  'Сапоги и ботинки': { en: 'Boots and ankle boots', zh: '靴子和短靴' },
+  'Сезонная обувь для взрослых из кожи, текстиля и других материалов': {
+    en: 'Seasonal adult footwear made of leather, textiles and other materials',
+    zh: '皮革、纺织及其他材料的成人季节性鞋靴',
+  },
+  'Спортивная обувь': { en: 'Sports footwear', zh: '运动鞋' },
+  'Кроссовки и кеды для взрослых; проверяем материалы и назначение': {
+    en: 'Adult trainers and sneakers; we check materials and intended use',
+    zh: '成人运动鞋和帆布鞋；核实材料和用途',
+  },
+  'Защитная обувь': { en: 'Protective footwear', zh: '防护鞋' },
+  'Специальная обувь с заявленными защитными свойствами': {
+    en: 'Special footwear with declared protective properties',
+    zh: '具有声明防护性能的专用鞋',
+  },
+  'Детская обувь': { en: 'Children’s footwear', zh: '童鞋' },
+  'Обувь для детей и подростков с учётом возрастной группы': {
+    en: 'Footwear for children and teenagers, assessed by age group',
+    zh: '根据年龄段评估的儿童及青少年鞋类',
+  },
+  'Детские коляски': { en: 'Baby strollers', zh: '婴儿推车' },
+  'Коляски и прогулочные системы; учитываем конструкцию и возраст ребёнка': {
+    en: 'Strollers and travel systems; we consider design and the child’s age',
+    zh: '推车和出行系统；考虑结构和儿童年龄',
+  },
+  'Школьно-письменные принадлежности': { en: 'School and stationery supplies', zh: '学生文具用品' },
+  'Тетради, альбомы и письменные принадлежности для детей': {
+    en: 'Notebooks, drawing pads and writing supplies for children',
+    zh: '儿童练习本、画册和书写用品',
+  },
+  'Кухонная мебель': { en: 'Kitchen furniture', zh: '厨房家具' },
+  'Кухонные гарнитуры, шкафы и рабочие поверхности': {
+    en: 'Kitchen units, cabinets and worktops',
+    zh: '厨房组合柜、橱柜及台面',
+  },
+  'Мебель для учебных заведений': {
+    en: 'Furniture for educational institutions',
+    zh: '教育机构家具',
+  },
+  'Ученические столы, стулья и системы хранения; учитываем возраст пользователей': {
+    en: 'Student desks, chairs and storage; we consider users’ ages',
+    zh: '学生桌椅及储物家具；考虑使用者年龄',
+  },
+  'Металлическая мебель': { en: 'Metal furniture', zh: '金属家具' },
+  'Шкафы, тумбы и стеллажи для бытового и общественного использования': {
+    en: 'Cabinets, pedestals and shelving for domestic and public use',
+    zh: '家用及公共场所使用的柜、底柜和货架',
+  },
+  'Защита от падения с высоты': { en: 'Fall protection equipment', zh: '防坠落装备' },
+  'Страховочные привязи, стропы и соединительные элементы': {
+    en: 'Safety harnesses, lanyards and connectors',
+    zh: '安全带、安全绳及连接件',
+  },
+  'Защита органов слуха': { en: 'Hearing protection', zh: '听力防护用品' },
+  'Противошумные наушники и вкладыши': {
+    en: 'Hearing protection earmuffs and earplugs',
+    zh: '防噪声耳罩和耳塞',
+  },
+  'Защита от электрического тока': { en: 'Electrical protection equipment', zh: '电击防护用品' },
+  'Диэлектрические перчатки, обувь и другие СИЗ; проверяем заявленные свойства': {
+    en: 'Insulating gloves, footwear and other PPE; we verify declared properties',
+    zh: '绝缘手套、鞋及其他个人防护用品；核实声明性能',
+  },
+  'Дезинфицирующие средства': { en: 'Disinfectants', zh: '消毒剂' },
+  'Средства для дезинфекции поверхностей, помещений и оборудования; проверяем область применения и необходимость СГР':
+    {
+      en: 'Disinfectants for surfaces, premises and equipment; we check intended use and state registration requirements',
+      zh: '表面、房间及设备消毒剂；核实用途和国家注册要求',
+    },
+  'Кожные антисептики': { en: 'Skin antiseptics', zh: '皮肤消毒剂' },
+  'Средства для гигиенической обработки рук; требования определяем по назначению и составу': {
+    en: 'Hand hygiene products; requirements depend on intended use and formulation',
+    zh: '手部卫生处理用品；要求取决于用途和成分',
+  },
+  'Освежители и ароматизаторы воздуха': {
+    en: 'Air fresheners and fragrances',
+    zh: '空气清新剂和芳香剂',
+  },
+  'Аэрозоли, гели и другие средства для ароматизации помещений': {
+    en: 'Aerosols, gels and other room fragrance products',
+    zh: '喷雾、凝胶及其他室内芳香产品',
+  },
+  'Стеклянная посуда': { en: 'Glassware', zh: '玻璃餐具' },
+  'Стаканы, бокалы, кувшины и блюда из стекла': {
+    en: 'Glasses, stemware, jugs and glass serving dishes',
+    zh: '玻璃杯、高脚杯、水壶及玻璃盘',
+  },
+  'Полимерная посуда': { en: 'Plastic tableware', zh: '塑料餐具' },
+  'Тарелки, чашки и многоразовые изделия для контакта с пищей': {
+    en: 'Plates, cups and reusable food-contact articles',
+    zh: '盘、杯及可重复使用的食品接触制品',
+  },
+  'Детская посуда': { en: 'Children’s tableware', zh: '儿童餐具' },
+  'Бутылочки, поильники, тарелки и столовые приборы с учётом возраста ребёнка': {
+    en: 'Bottles, drinking cups, plates and cutlery assessed by the child’s age',
+    zh: '根据儿童年龄评估的奶瓶、饮水杯、盘及餐具',
+  },
+  'Для бытовой химии проверяем требования ГОСТ Р по постановлению № 2425 и санитарные требования КТС № 299.':
+    {
+      en: 'For household chemicals we check GOST R requirements under Government Decree No. 2425 and sanitary requirements under Customs Union Commission Decision No. 299.',
+      zh: '对于日用化学品，我们核实第2425号政府决议中的俄罗斯国家标准要求及海关联盟委员会第299号决定中的卫生要求。',
+    },
+  'Для бытовой химии из соответствующих перечней постановления № 2425. Проверяем применимость требований по назначению, составу и точному виду продукции.':
+    {
+      en: 'For household chemicals covered by the relevant lists in Decree No. 2425. We check applicability by intended use, formulation and exact product type.',
+      zh: '适用于第2425号决议相应清单中的日用化学品。根据用途、成分及具体产品类型核实要求的适用性。',
+    },
+});

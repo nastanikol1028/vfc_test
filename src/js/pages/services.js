@@ -3,7 +3,7 @@ const services = () =>
   `<div class="services-view home-page"><div class="wrap"><nav class="svc-breadcrumb" aria-label="Хлебные крошки"><a href="#/">Главная</a><span aria-hidden="true">/</span><span aria-current="page">Услуги</span></nav><section class="svc-intro"><span class="home-kicker">УСЛУГИ VFC-TEST</span><h1>Подберем документы<br>для вашей продукции</h1><p>Помогаем производителям, импортёрам и поставщикам разобраться с требованиями к продукции. Подбираем профильные органы и лаборатории, готовим документы и сопровождаем работу на каждом этапе.</p><div class="svc-search-row"><form role="search" id="svc-search"><label for="svc-search-input" class="svc-sr-only">Товар или услуга: например, ваза, крем, декларация</label><span aria-hidden="true">⌕</span><input id="svc-search-input" type="search" placeholder="Товар или услуга: например, ваза, крем, декларация" autocomplete="off"><button type="submit" aria-label="Найти продукцию">→</button></form><a class="home-link" href="#/select">Не знаю, какие документы нужны →</a></div><div id="svc-search-results" class="svc-search-results" hidden><p id="svc-search-status" class="svc-search-status" role="status" aria-live="polite"></p><div id="svc-search-links"></div></div></section>${knowledgeGuideBanner()}<section class="svc-task"><h2 id="svc-task-heading">Какая задача у вас сейчас?</h2><div class="svc-tabs" role="tablist" aria-labelledby="svc-task-heading">${[
     ['declaration', 'Декларирование · ЕАЭС / ГОСТ Р'],
     ['certification', 'Сертификация · ЕАЭС / ГОСТ Р'],
-    ['voluntary', 'Добровольная · ГОСТ Р'],
+    ['voluntary', 'Добровольная сертификация'],
     ['testing', 'Испытания'],
     ['specifications', 'Разработка ТУ'],
     ['origin', 'Сертификат СТ-1'],

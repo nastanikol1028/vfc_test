@@ -22,7 +22,7 @@ function categoryPage(id) {
       )}</div><div class="ref-two ref-document-options category-document-grid">${info.documents
       .map((key) => {
         const d = VFC_CATEGORY_DOCUMENTS[key];
-        return `<article><h3>${d.title}</h3><p>${info.documentNotes?.[key] || d.text}</p><a class="home-link" href="${d.href}">Подробнее →</a></article>`;
+        return `<article><h3>${info.documentTitles?.[key] || d.title}</h3><p>${info.documentNotes?.[key] || d.text}</p><a class="home-link" href="${d.href}">Подробнее →</a></article>`;
       })
       .join(
         '',
