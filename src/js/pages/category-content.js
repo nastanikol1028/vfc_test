@@ -43,8 +43,8 @@ function categoryPage(id) {
       )}</div><p class="category-products-note">Примеры продукции для предварительного выбора. Точные требования определяем по характеристикам товара.</p><a class="category-official-link" href="https://eec.eaeunion.org/comission/department/deptexreg/tr/TR_general.php" target="_blank" rel="noopener noreferrer">Официальный перечень регламентов ЕЭК ↗</a></section><section class="ref-section category-estimate" id="category-estimate"><h2>Что нужно для<br>предварительного расчета</h2><ul>${info.inputs.map((text) => `<li>${text}</li>`).join('')}</ul><p>Для предварительной оценки достаточно имеющихся сведений. Недостающие документы и образцы согласуем отдельно.</p>${refButton('Обсудить эту продукцию')}</section><section class="ref-section"><h2>Как пройдет работа</h2><div class="ref-four ref-work-steps">${[
       ['Изучим продукцию', 'Определим требования и исходные данные.'],
       ['Согласуем условия', 'Подберем исполнителей, обсудим стоимость и сроки.'],
-      ['Подготовим пакет', 'Согласуем сведения и организуем необходимые процедуры.'],
-      ['Проверим результат', 'Проверим документы и объясним дальнейшие действия.'],
+      ['Оформление документа', 'Проведём необходимые испытания для оформления документа.'],
+      ['Готовый документ', 'Выдадим готовый документ с публикацией в реестре.'],
     ]
       .map((x, i) => `<article><strong>0${i + 1}</strong><h3>${x[0]}</h3><p>${x[1]}</p></article>`)
       .join('')}</div></section>${refFaq()}${refMarket()}${refRequest()}`,

@@ -3980,3 +3980,16 @@ Object.assign(VFC_TRANSLATIONS, {
     zh: '查询俄罗斯认可登记文件',
   },
 });
+
+Object.assign(VFC_TRANSLATIONS, {
+  'Оформление документа': { en: 'Document preparation', zh: '文件办理' },
+  'Проведём необходимые испытания для оформления документа.': {
+    en: 'We will conduct the tests required to prepare the document.',
+    zh: '我们将进行办理文件所需的测试。',
+  },
+  'Готовый документ': { en: 'Completed document', zh: '已完成的文件' },
+  'Выдадим готовый документ с публикацией в реестре.': {
+    en: 'We will issue the completed document and publish it in the registry.',
+    zh: '我们将签发完成的文件并在登记系统中发布。',
+  },
+});
