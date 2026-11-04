@@ -6,6 +6,7 @@
     "src/js/data/knowledge.js",
     "src/js/pages/knowledge.js",
     "src/js/data/category-content.js",
+    "src/js/data/regulation-scopes.js",
     "src/js/components/category-icons.js",
     "src/js/pages/category-content.js",
     "src/js/core/site-ux.js",

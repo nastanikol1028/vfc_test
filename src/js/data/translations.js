@@ -4369,3 +4369,152 @@ Object.assign(VFC_TRANSLATIONS, {
     zh: 'VFC-TEST 办公室入口：1417号门和公司标牌',
   },
 });
+
+Object.assign(VFC_TRANSLATIONS, {
+  'Электрооборудование с номинальным напряжением 50–1000 В переменного или 75–1500 В постоянного тока: бытовые приборы, кабели, аппаратура и другие изделия в области применения регламента. Учитываем назначение оборудования и предусмотренные исключения.':
+    {
+      en: 'Electrical equipment rated 50–1000 V AC or 75–1500 V DC, including household appliances, cables and apparatus within the regulation’s scope. Intended use and applicable exclusions are taken into account.',
+      zh: '适用于额定电压为交流50–1000伏或直流75–1500伏的电气设备，包括法规范围内的家用电器、电缆及装置。需考虑设备用途和适用的排除项。',
+    },
+  'Готовая упаковка и укупорочные средства: коробки, пакеты, бутылки, банки, крышки и пробки из разных материалов. Для упаковки, которую изготовитель формирует при производстве своего товара, предусмотрен отдельный порядок применения требований.':
+    {
+      en: 'Finished packaging and closures: boxes, bags, bottles, jars, lids and stoppers made from different materials. Packaging formed by a manufacturer while producing its own goods is subject to specific application rules.',
+      zh: '适用于不同材料的成品包装和封口用品，如纸箱、袋、瓶、罐、盖和塞。制造商在生产自有产品过程中形成的包装适用专门要求。',
+    },
+  'Новая продукция для детей и подростков: одежда, обувь, изделия для ухода и кормления, коляски, школьно-письменные принадлежности. Требования зависят от возраста и назначения; игрушки рассматриваются отдельно по ТР ТС 008/2011.':
+    {
+      en: 'New products for children and teenagers: clothing, footwear, care and feeding articles, strollers and school stationery. Requirements depend on age and intended use; toys are assessed separately under TR CU 008/2011.',
+      zh: '适用于儿童及青少年的新产品，如服装、鞋类、护理和喂养用品、推车及学生文具。要求取决于年龄和用途；玩具另按TR CU 008/2011评估。',
+    },
+  'Изделия и материалы, предназначенные для игры детей до 14 лет: игровые наборы, куклы, конструкторы и другие игрушки. Проверяем возрастное назначение и перечень изделий, которые регламент не относит к игрушкам.':
+    {
+      en: 'Products and materials intended for play by children under 14, such as play sets, dolls and construction toys. We check the intended age and the list of articles excluded from the toy definition.',
+      zh: '适用于供14岁以下儿童玩耍的产品和材料，如游戏套装、玩偶和拼搭玩具。需核实适用年龄及不属于玩具的产品清单。',
+    },
+  'Парфюмерия и косметика для наружного применения: средства для кожи, волос, ногтей, губ, зубов и полости рта. Учитываем состав и заявленное действие; лечебное назначение требует отдельной оценки.':
+    {
+      en: 'Perfumes and cosmetics for external use on skin, hair, nails, lips, teeth and the oral cavity. Formulation and claimed effects are considered; therapeutic use requires separate assessment.',
+      zh: '适用于皮肤、头发、指甲、嘴唇、牙齿及口腔外用的香水和化妆品。需考虑成分和宣称功效；治疗用途需另行评估。',
+    },
+  'Машины и оборудование в области применения регламента: станки, насосы, компрессоры, конвейеры, пищевые и упаковочные машины. Проверяем назначение, конструкцию, исключения и перечни продукции для выбора формы подтверждения соответствия.':
+    {
+      en: 'Machinery within the regulation’s scope, including machine tools, pumps, compressors, conveyors, food-processing and packaging machines. Intended use, design, exclusions and product lists determine the conformity assessment route.',
+      zh: '适用于法规范围内的机床、泵、压缩机、输送机、食品加工及包装机械。需核实用途、结构、排除项和产品清单，以确定符合性评估方式。',
+    },
+  'Оборудование, специально предназначенное для работы во взрывоопасных средах, включая электрические и неэлектрические изделия. Учитываем вид среды, группу оборудования, уровень и способы взрывозащиты.':
+    {
+      en: 'Equipment specifically designed for explosive atmospheres, including electrical and non-electrical products. The atmosphere, equipment group, protection level and explosion-protection methods are considered.',
+      zh: '适用于专为爆炸性环境设计的电气及非电气设备。需考虑环境类型、设备组别、防护级别和防爆方式。',
+    },
+  'Продукция лёгкой промышленности: одежда для взрослых, ткани, домашний текстиль, обувь, кожгалантерея и ковровые изделия. Детскую продукцию и средства индивидуальной защиты рассматриваем по отдельным регламентам.':
+    {
+      en: 'Light-industry products such as adult clothing, fabrics, household textiles, footwear, leather goods and carpets. Children’s products and personal protective equipment are assessed under separate regulations.',
+      zh: '适用于成人服装、面料、家用纺织品、鞋类、皮具及地毯等轻工产品。儿童产品和个人防护用品按其他法规另行评估。',
+    },
+  'Новые средства индивидуальной защиты от производственных и других опасных факторов: каски, перчатки, респираторы, защитная одежда и обувь, страховочные привязи. Требования определяются назначением и заявленными защитными свойствами.':
+    {
+      en: 'New personal protective equipment against occupational and other hazards: helmets, gloves, respirators, protective clothing and footwear, and safety harnesses. Requirements depend on intended use and declared protection.',
+      zh: '适用于防范职业及其他危害的新个人防护用品，如安全帽、手套、呼吸防护用品、防护服鞋及安全带。要求取决于用途和声明的防护性能。',
+    },
+  'Технические средства, способные создавать электромагнитные помехи или зависеть от внешних помех: электронные устройства, электроприборы и оборудование. Применимость проверяем по функциям и конструкции, а не только по наличию питания.':
+    {
+      en: 'Technical devices that can generate electromagnetic interference or be affected by it, including electronics, electrical appliances and machinery. Applicability depends on functions and design, not simply on having a power supply.',
+      zh: '适用于可能产生电磁干扰或受其影响的电子设备、电器及机械。适用性取决于功能和结构，而不仅取决于是否带电源。',
+    },
+  'Пищевая продукция и связанные с её безопасностью процессы производства, хранения, перевозки и реализации. Для молочной, мясной, рыбной продукции и других отдельных групп дополнительно проверяем отраслевые регламенты.':
+    {
+      en: 'Food products and related safety processes in production, storage, transport and sale. Additional sector-specific regulations are checked for dairy, meat, fish and other particular groups.',
+      zh: '适用于食品及其生产、储存、运输和销售中的相关安全过程。乳制品、肉类、水产品及其他特定类别还需核实行业专门法规。',
+    },
+  'Маркировка пищевой продукции: наименование, состав, количество, срок годности, условия хранения и другие обязательные сведения. Применяем к информации о продукте, а безопасность самой упаковки оцениваем отдельно.':
+    {
+      en: 'Food labelling, including product name, ingredients, quantity, shelf life, storage conditions and other mandatory information. Packaging safety is assessed separately.',
+      zh: '适用于食品标签中的名称、成分、数量、保质期、储存条件及其他必需信息。包装本身的安全性另行评估。',
+    },
+  'Мебель для дома и общественных помещений, в том числе изготовленная на заказ, детская мебель и мебель для учебных заведений. Вид изделия, назначение и возраст пользователей влияют на требования и форму подтверждения.':
+    {
+      en: 'Domestic and public-use furniture, including made-to-order furniture, children’s furniture and furniture for educational institutions. Product type, purpose and users’ ages affect requirements and the assessment route.',
+      zh: '适用于家用和公共场所家具，包括定制家具、儿童家具及教育机构家具。产品类型、用途和使用者年龄影响要求及评估方式。',
+    },
+  'Пищевые добавки, ароматизаторы и технологические вспомогательные средства, а также требования к их применению при производстве продуктов. Проверяем конкретное вещество, его функцию, допустимость и условия использования.':
+    {
+      en: 'Food additives, flavourings and processing aids, and the requirements for their use in food production. We check the substance, its function, permitted use and conditions.',
+      zh: '适用于食品添加剂、香料、加工助剂及其在食品生产中的使用要求。需核实具体物质、功能、允许用途和使用条件。',
+    },
+  'Оборудование под избыточным давлением свыше 0,05 МПа в пределах установленных регламентом параметров: сосуды, котлы, трубопроводы и арматура. Учитываем давление, вместимость, диаметр и группу рабочей среды.':
+    {
+      en: 'Pressure equipment above 0.05 MPa within the regulation’s defined parameters, including vessels, boilers, pipes and fittings. Pressure, volume, diameter and fluid group are considered.',
+      zh: '适用于超压高于0.05兆帕且符合规定参数的容器、锅炉、管道及配件。需考虑压力、容积、直径和工作介质组别。',
+    },
+  'Молоко и молочная продукция: сырое молоко, сливки, кисломолочные продукты, сыры и другие изделия в области применения регламента. Категорию определяем по составу и технологии производства.':
+    {
+      en: 'Milk and dairy products, including raw milk, cream, fermented products, cheese and other products within scope. Composition and production technology determine the product category.',
+      zh: '适用于原奶、奶油、发酵乳、奶酪及法规范围内的其他乳制品。根据成分和生产工艺确定产品类别。',
+    },
+  'Продукты убоя и мясная продукция из соответствующих видов сельскохозяйственных животных: мясо, субпродукты, полуфабрикаты и колбасные изделия. Для мяса птицы и продукции его переработки предусмотрен ТР ЕАЭС 051/2021.':
+    {
+      en: 'Slaughter products and meat products from the covered farm animal species, including meat, offal, prepared products and sausages. Poultry meat and processed poultry products are covered by TR EAEU 051/2021.',
+      zh: '适用于相关农畜种类的屠宰产品和肉制品，包括肉、内脏、半成品及香肠。禽肉及其加工制品适用TR EAEU 051/2021。',
+    },
+  'Электротехника и радиоэлектроника из перечня приложения № 1: бытовые приборы, компьютеры, средства связи, светотехника и отдельные кабельные изделия. Регламент ограничивает содержание опасных веществ; применимость проверяем по конкретной группе продукции.':
+    {
+      en: 'Electrical and electronic products listed in Annex 1, including household appliances, computers, communication devices, lighting and certain cables. The regulation limits hazardous substances; applicability is checked by product group.',
+      zh: '适用于附件1所列电气和电子产品，如家电、计算机、通信设备、照明和部分电缆。法规限制有害物质含量；需按具体产品类别核实适用性。',
+    },
+  'Рыба и другая пищевая рыбная продукция в области применения регламента: охлаждённые и замороженные продукты, консервы, икра и изделия переработки. Учитываем вид сырья и способ обработки.':
+    {
+      en: 'Fish and fishery food products within scope, including chilled and frozen products, preserves, roe and processed products. Raw material type and processing method are considered.',
+      zh: '适用于法规范围内的鱼类和水产食品，如冷藏、冷冻产品、罐头、鱼卵及加工制品。需考虑原料种类和加工方式。',
+    },
+  'Упакованная питьевая вода, включая природную минеральную воду и воду для детского питания. Проверяем происхождение, состав и назначение; требования к другим напиткам определяем отдельно.':
+    {
+      en: 'Packaged drinking water, including natural mineral water and water for children’s nutrition. Origin, composition and purpose are checked; other beverages are assessed separately.',
+      zh: '适用于包装饮用水，包括天然矿泉水和儿童饮用水。需核实来源、成分和用途；其他饮料另行评估。',
+    },
+  'Мясо птицы и продукция его переработки: тушки, части тушек, субпродукты, полуфабрикаты и готовые изделия в области применения регламента. Учитываем состав, вид сырья и технологию изготовления.':
+    {
+      en: 'Poultry meat and processed poultry products, including carcasses, cuts, offal, prepared products and finished foods within scope. Composition, raw materials and manufacturing processes are considered.',
+      zh: '适用于法规范围内的禽胴体、分割肉、内脏、半成品及禽肉加工制品。需考虑成分、原料和生产工艺。',
+    },
+  'Отдельные виды продукции из национальных перечней обязательного подтверждения соответствия в России. Для посуды и хозяйственных изделий проверяем материал, назначение и точную позицию перечня.':
+    {
+      en: 'Specific products on Russia’s national mandatory conformity assessment lists. For tableware and household articles, we check the material, intended use and exact list entry.',
+      zh: '适用于俄罗斯国家强制性符合性评估清单中的特定产品。餐具和家居用品需核实材料、用途和具体清单条目。',
+    },
+  'Продукция из санитарных перечней, включая отдельные виды бытовой химии, дезинфицирующие средства и изделия, контактирующие с пищей. Необходимость СГР проверяем по разделу II перечня и действующим требованиям к конкретному товару.':
+    {
+      en: 'Products on sanitary-control lists, including certain household chemicals, disinfectants and food-contact articles. State registration is checked against Section II and the requirements applicable to the specific product.',
+      zh: '适用于卫生监管清单中的产品，包括部分日用化学品、消毒剂及食品接触制品。根据清单第二部分和具体产品的现行要求核实是否需要国家注册。',
+    },
+  'Детская одежда и текстильные изделия для детей и подростков. Учитываем возрастную группу, слой одежды, состав материалов и контакт с кожей.':
+    {
+      en: 'Children’s clothing and textiles. Age group, clothing layer, material composition and skin contact are considered.',
+      zh: '适用于儿童和青少年服装及纺织品。需考虑年龄段、服装层次、材料成分及皮肤接触情况。',
+    },
+  'Обувь и кожгалантерея для детей и подростков. Требования определяем по возрасту, назначению и материалам изделия.':
+    {
+      en: 'Footwear and leather goods for children and teenagers. Requirements depend on age, intended use and materials.',
+      zh: '适用于儿童及青少年鞋类和皮具。要求取决于年龄、用途和材料。',
+    },
+  'Обувь с заявленными защитными свойствами, предназначенная для защиты от опасных факторов. Повседневную обувь без защитного назначения оцениваем по другим применимым требованиям.':
+    {
+      en: 'Footwear with declared protection against hazards. Ordinary footwear without a protective purpose is assessed under other applicable requirements.',
+      zh: '适用于声明具有危害防护性能的鞋类。无防护用途的日常鞋类按其他适用要求评估。',
+    },
+  'Посуда, столовые приборы и изделия для кормления детей: бутылочки, поильники, тарелки и другие изделия. Учитываем возраст ребёнка и материал, контактирующий с пищей.':
+    {
+      en: 'Children’s tableware, cutlery and feeding articles, including bottles, drinking cups and plates. The child’s age and food-contact material are considered.',
+      zh: '适用于儿童餐具、刀叉及喂养用品，如奶瓶、饮水杯和盘。需考虑儿童年龄及食品接触材料。',
+    },
+  'Отдельные виды бытовой химии из перечня продукции, подлежащей декларированию. Проверяем назначение, состав и точное наименование товара в действующей редакции перечня.':
+    {
+      en: 'Specific household chemicals on the mandatory declaration list. Intended use, formulation and the exact product entry in the current list are checked.',
+      zh: '适用于强制声明清单中的特定日用化学品。需按现行清单核实用途、成分和具体产品名称。',
+    },
+  'Санитарные требования к материалам и изделиям, контактирующим с пищевой продукцией. Для конкретной посуды проверяем материал, покрытие и условия использования.':
+    {
+      en: 'Sanitary requirements for food-contact materials and articles. We check the tableware’s material, coating and conditions of use.',
+      zh: '适用于食品接触材料和制品的卫生要求。需核实具体餐具的材料、涂层和使用条件。',
+    },
+  'На что распространяется': { en: 'Products covered', zh: '适用产品范围' },
+});

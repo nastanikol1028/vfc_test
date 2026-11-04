@@ -414,3 +414,25 @@
     min-height: 185px;
   }
 }
+
+/* Plain-language scope stays beside each linked regulation. */
+.category-regulation-scope {
+  margin: 16px 0;
+}
+.category-regulation-scope > strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #3d698a;
+  font-size: 13px;
+  font-weight: 600;
+}
+.reference-page .category-regulation-scope > p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #5b7184;
+}
+.category-regulation > div > small {
+  display: block;
+  margin-top: auto;
+}
