@@ -12,7 +12,7 @@ for (const item of fs.readdirSync(path.join(root, 'dist'), { recursive: true }))
   if (!item.endsWith('.html')) continue;
   pages++;
   const dom = new JSDOM(fs.readFileSync(path.join(root, 'dist', item), 'utf8'), {
-    url: 'https://vfc-test.indigoyew34.chatgpt.site/',
+    url: 'https://vfc-test.annikol396.chatgpt.site/',
   });
   const document = dom.window.document;
   if (

@@ -1,5 +1,5 @@
 /* Shared navigation, accessibility, metadata and lead feedback. */
-const VFC_SITE_ORIGIN = 'https://vfc-test.indigoyew34.chatgpt.site';
+const VFC_SITE_ORIGIN = 'https://vfc-test.annikol396.chatgpt.site';
 const VFC_ROUTE_ROOTS = [
   'services',
   'catalog',

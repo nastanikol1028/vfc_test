@@ -21,7 +21,7 @@ virtualConsole.on('jsdomError', (error) => {
   throw error;
 });
 const dom = new JSDOM(template, {
-  url: 'https://vfc-test.indigoyew34.chatgpt.site/',
+  url: 'https://vfc-test.annikol396.chatgpt.site/',
   runScripts: 'outside-only',
   pretendToBeVisual: true,
   virtualConsole,
@@ -46,7 +46,7 @@ const routes = vm.runInContext(
 const sitemap = [];
 for (const route of [...new Set(routes), '__not_found__']) {
   dom.reconfigure({
-    url: 'https://vfc-test.indigoyew34.chatgpt.site/' + route + (route ? '/' : ''),
+    url: 'https://vfc-test.annikol396.chatgpt.site/' + route + (route ? '/' : ''),
   });
   vm.runInContext('render()', context);
   const { document } = dom.window;
