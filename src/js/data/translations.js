@@ -4518,3 +4518,11 @@ Object.assign(VFC_TRANSLATIONS, {
     },
   'На что распространяется': { en: 'Products covered', zh: '适用产品范围' },
 });
+
+Object.assign(VFC_TRANSLATIONS, {
+  'Работаем не только напрямую с производителями и импортёрами. Помогаем таможенным брокерам, логистическим компаниям, агентам и посредникам организовать оформление документов для их клиентов и упрощаем процедуру сертификации. Предлагаем разные варианты оформления с учётом стоимости и сроков, необходимых для конкретной задачи. По каждой категории продукции сотрудничаем с разными лабораториями и органами по сертификации — у каждого своя специализация и сильные стороны.':
+    {
+      en: 'We work directly with manufacturers and importers, and help customs brokers, logistics companies, agents and intermediaries arrange documents for their clients and simplify certification. We offer different options based on the cost and timeframe required for each task. For every product category, we work with different laboratories and certification bodies, each with its own specialisation and strengths.',
+      zh: '我们不仅直接服务于制造商和进口商，也协助报关代理、物流公司、代理商和中间人为其客户办理文件，简化认证流程。我们根据具体任务所需的费用和时间提供不同办理方案。针对各类产品，我们与不同的实验室和认证机构合作，每家都有各自的专业领域和优势。',
+    },
+});
