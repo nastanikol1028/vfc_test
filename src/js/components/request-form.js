@@ -6,5 +6,5 @@ function formCard(title = 'Расскажите о вашей задаче') {
     .map(([id, service]) => `<option value="${id}">${service.title}</option>`)
     .join(
       '',
-    )}<option value="marketplaces">Подготовка к маркетплейсу</option></select></label></div></details><label class="ref-consent clear-consent"><input type="checkbox" required><span>Согласен(на) на обработку данных для ответа на обращение и принимаю <a href="#/privacy">политику конфиденциальности.</a></span></label><div class="clear-submit-row"><button class="btn" type="submit">Получить расчёт стоимости →</button></div><div class="success photo-form-result" role="status" aria-live="polite"></div></form></div>`;
+    )}<option value="marketplaces">Подготовка к маркетплейсу</option></select></label></div></details><label class="ref-consent clear-consent"><input type="checkbox" name="personal_data_consent" value="yes" required><span>Даю <a href="#/consent">согласие на обработку персональных данных</a> для ответа на обращение. <a href="#/privacy">Политика обработки персональных данных</a>.</span></label><div class="clear-submit-row"><button class="btn" type="submit">Получить расчёт стоимости →</button></div><div class="success photo-form-result" role="status" aria-live="polite"></div></form></div>`;
 }

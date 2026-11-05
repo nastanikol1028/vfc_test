@@ -38,7 +38,7 @@ function knowledgeGuidePage() {
 }
 
 function partnerPriceDialog() {
-  return `<dialog class="partner-price-dialog" aria-labelledby="partner-price-title"><div class="partner-price-head"><h2 id="partner-price-title">Запросить оптовый прайс</h2><button type="button" data-partner-price-close aria-label="Закрыть">×</button></div><p>Расскажите о товаре — подготовим стоимость услуг под вашу задачу и ответим по указанным контактам.</p><form class="lead-form"><input type="hidden" name="service" value="Запрос оптового прайса для партнёра"><div class="partner-price-fields"><label>Ваше имя<input name="name" required autocomplete="name" maxlength="100" placeholder="Как к вам обращаться"></label><label>Компания<input name="company" autocomplete="organization" maxlength="200" placeholder="Необязательно"></label><label>E-mail для ответа<input name="contact" type="email" required autocomplete="email" maxlength="150" placeholder="you@company.ru"></label><label>О товаре и задаче<textarea name="message" maxlength="5000" placeholder="Наименование, код ТН ВЭД (если известен), страна изготовления и что нужно оформить"></textarea></label></div><label class="ref-consent"><input type="checkbox" required><span>Я согласен(на) на обработку персональных данных и принимаю <a href="#/privacy">политику конфиденциальности.</a></span></label><button type="submit" class="btn">Получить оптовый прайс →</button><div class="success" role="status" aria-live="polite"></div></form></dialog>`;
+  return `<dialog class="partner-price-dialog" aria-labelledby="partner-price-title"><div class="partner-price-head"><h2 id="partner-price-title">Запросить оптовый прайс</h2><button type="button" data-partner-price-close aria-label="Закрыть">×</button></div><p>Расскажите о товаре — подготовим стоимость услуг под вашу задачу и ответим по указанным контактам.</p><form class="lead-form"><input type="hidden" name="service" value="Запрос оптового прайса для партнёра"><div class="partner-price-fields"><label>Ваше имя<input name="name" required autocomplete="name" maxlength="100" placeholder="Как к вам обращаться"></label><label>Компания<input name="company" autocomplete="organization" maxlength="200" placeholder="Необязательно"></label><label>E-mail для ответа<input name="contact" type="email" required autocomplete="email" maxlength="150" placeholder="you@company.ru"></label><label>О товаре и задаче<textarea name="message" maxlength="5000" placeholder="Наименование, код ТН ВЭД (если известен), страна изготовления и что нужно оформить"></textarea></label></div><label class="ref-consent"><input type="checkbox" name="personal_data_consent" value="yes" required><span>Даю <a href="#/consent">согласие на обработку персональных данных</a> для ответа на обращение. <a href="#/privacy">Политика обработки персональных данных</a>.</span></label><button type="submit" class="btn">Получить оптовый прайс →</button><div class="success" role="status" aria-live="polite"></div></form></dialog>`;
 }
 function wirePartnerPrice() {
   const trigger = document.querySelector('[data-partner-price]'),
@@ -69,5 +69,7 @@ function wirePartnerPrice() {
         dialog.close();
     }
   });
-  dialog.querySelector('a[href="#/privacy"]').addEventListener('click', () => dialog.close());
+  dialog
+    .querySelectorAll('a[href="#/privacy"], a[href="#/consent"]')
+    .forEach((link) => link.addEventListener('click', () => dialog.close()));
 }

@@ -208,6 +208,9 @@ async function submitLeadForm(form, files = []) {
     data.set('service', serviceInfo.title);
   }
   if (data.get('service') === 'marketplaces') data.set('service', 'Подготовка к маркетплейсу');
+  data.set('consent_version', '2026-11-05-draft-1');
+  data.set('consent_submitted_at', new Date().toISOString());
+  data.set('consent_document', new URL('/consent/', location.origin).href);
   data.set('_subject', 'Заявка с сайта VFC-TEST');
   data.set('source_page', location.href);
   data.set('attachment_count', String(files.length));

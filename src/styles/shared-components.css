@@ -383,3 +383,15 @@
     margin-bottom: 24px;
   }
 }
+
+.legal-document {
+  max-width: 900px;
+  overflow-wrap: anywhere;
+}
+.legal-document h2 {
+  margin-top: 2rem;
+}
+.legal-document p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}

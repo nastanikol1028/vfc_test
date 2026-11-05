@@ -27,7 +27,8 @@ function render() {
   else if (section === 'catalog' && id) app.innerHTML = productPage(id);
   else if (['declaration', 'certification', 'voluntary'].includes(section))
     app.innerHTML = servicePage(section);
-  else if (['privacy', 'terms', 'cookies'].includes(section)) app.innerHTML = legalPage(section);
+  else if (['privacy', 'consent', 'terms', 'cookies'].includes(section))
+    app.innerHTML = legalPage(section);
   else if (section === 'specifications') app.innerHTML = specifications();
   else if (['services', 'pick-services'].includes(section)) app.innerHTML = services();
   else if (section === 'partners') app.innerHTML = partnershipPage();
