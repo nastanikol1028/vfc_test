@@ -1,5 +1,6 @@
 // main.js
 window.addEventListener('resize', syncServiceTabOrientation, { passive: true });
+ensureAllDialogs();
 initLeadDrafts();
 initFloatingAssistant();
 initDocumentAssistant();

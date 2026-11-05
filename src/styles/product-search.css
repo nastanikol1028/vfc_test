@@ -170,7 +170,7 @@
 .ref-search-row > .smart-search-form {
   min-width: 0;
 }
-.ref-search-row:has(.smart-search-form) > a {
+.ref-search-row.has-smart-search > a {
   font-size: 14px;
   max-width: 300px;
   flex-shrink: 0;
@@ -189,19 +189,19 @@
   .smart-example-chips {
     max-width: 220px;
   }
-  .ref-search-row:has(.smart-search-form) {
+  .ref-search-row.has-smart-search {
     gap: 20px;
   }
-  .ref-search-row:has(.smart-search-form) > a {
+  .ref-search-row.has-smart-search > a {
     max-width: 230px;
     font-size: 13px;
   }
 }
 @media (max-width: 900px) {
-  .ref-search-row:has(.smart-search-form) {
+  .ref-search-row.has-smart-search {
     display: block;
   }
-  .ref-search-row:has(.smart-search-form) > a {
+  .ref-search-row.has-smart-search > a {
     max-width: none;
     margin-top: 18px;
   }
@@ -283,7 +283,7 @@
   .smart-show-all {
     font-size: 13px;
   }
-  .ref-search-row:has(.smart-search-form) > a {
+  .ref-search-row.has-smart-search > a {
     font-size: 14px;
   }
 }

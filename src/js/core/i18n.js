@@ -70,10 +70,10 @@ function vfcApplyLanguage() {
       record.last = next;
       vfcTextSources.set(node, record);
     }
-    document.querySelectorAll('[placeholder],[aria-label],[title]').forEach((element) => {
+    document.querySelectorAll('[placeholder],[aria-label],[title],[alt]').forEach((element) => {
       if (element.closest('[data-language-ignore]')) return;
       let attrs = vfcAttributeSources.get(element) || {};
-      for (const attr of ['placeholder', 'aria-label', 'title']) {
+      for (const attr of ['placeholder', 'aria-label', 'title', 'alt']) {
         if (!element.hasAttribute(attr)) continue;
         const current = element.getAttribute(attr);
         let record = attrs[attr];
@@ -104,7 +104,7 @@ function vfcApplyLanguage() {
       }[vfcLanguage];
       languageButton.setAttribute(
         'aria-label',
-        { ru: 'Выбрать язык', en: 'Choose language', zh: '选择语言' }[vfcLanguage],
+        { ru: 'Выбрать язык: RU', en: 'Choose language: EN', zh: '选择语言：中文' }[vfcLanguage],
       );
     }
     document

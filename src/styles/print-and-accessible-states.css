@@ -1,0 +1,244 @@
+/* Only error, keyboard, legacy and print states; preserve normal card geometry. */
+.contact-field-error {
+  display: block;
+  margin-top: 6px;
+  color: #a42030;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.contact-field-error[hidden] {
+  display: none;
+}
+.photo-preview-list span[tabindex]:focus-visible {
+  outline: 2px solid #3278b8;
+  outline-offset: 2px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  overflow: visible;
+}
+.legacy-dialog:not([open]) {
+  display: none;
+}
+.legacy-dialog[open] {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10060;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+}
+.legacy-dialog-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10050;
+  background: #102a46a6;
+}
+@media (forced-colors: active) {
+  button,
+  .btn,
+  input,
+  select,
+  textarea,
+  summary {
+    border-color: ButtonText !important;
+  }
+  :focus-visible {
+    outline: 2px solid Highlight !important;
+    outline-offset: 3px;
+  }
+}
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+  html,
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  body {
+    font-size: 11pt !important;
+  }
+  .header,
+  .reference-footer,
+  .floating,
+  .back-top,
+  .skip-link,
+  #route-progress,
+  dialog,
+  nav,
+  .ref-request,
+  .home-actions,
+  .clear-submit-row,
+  .photo-upload-section,
+  .clear-optional,
+  .ref-consent,
+  .lead-draft-note,
+  .btn,
+  .home-pill,
+  .yandex-office-embed,
+  .yandex-reviews-embed,
+  .contact-office-photo,
+  .form-bot-field {
+    display: none !important;
+  }
+  .page,
+  #app,
+  .wrap,
+  .reference-page,
+  .ref-section,
+  .section,
+  .form-wrap {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+    width: auto !important;
+    min-height: 0 !important;
+    background: white !important;
+    box-shadow: none !important;
+  }
+  .reveal-ready {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  p,
+  li,
+  label,
+  h1,
+  h2,
+  h3,
+  a {
+    color: black !important;
+  }
+  h1 {
+    font-size: 22pt !important;
+    margin: 0 0 12pt !important;
+  }
+  h2 {
+    font-size: 16pt !important;
+    margin: 18pt 0 8pt !important;
+  }
+  h3 {
+    font-size: 12pt !important;
+  }
+  .ref-contact-hero,
+  .ref-office-address,
+  .clear-form-grid {
+    display: block !important;
+  }
+  .ref-contact-list > div,
+  .ref-company,
+  .ref-office-address {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .ref-contact-list {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 12pt;
+  }
+  .ref-messengers img {
+    display: none;
+  }
+  .clear-form-grid > label {
+    display: block !important;
+    margin-bottom: 12pt;
+  }
+  input,
+  textarea {
+    color: black !important;
+    border: 1pt solid #555 !important;
+    background: white !important;
+    box-shadow: none !important;
+  }
+  textarea {
+    min-height: 30mm;
+  }
+  #app[data-route-root='contacts'] .ref-intro > p {
+    margin-bottom: 12pt !important;
+  }
+}
+/* Requested service menu polish only; homepage cards keep their existing styles. */
+.header #services-menu {
+  min-width: 310px;
+  padding: 10px;
+  border: 1px solid #d7e6f2;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 18px 45px #183e6124;
+  max-height: 70vh;
+  overflow-y: auto;
+  transform-origin: top left;
+}
+.header #services-menu:not([hidden]) {
+  animation: services-menu-enter 0.18s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.header #services-menu a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: 9px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #304d66;
+  white-space: normal;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+.header #services-menu a::after {
+  content: '›';
+  color: #397bb4;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.header #services-menu a:first-child {
+  font-weight: 700;
+  background: #edf6fd;
+  color: #276aa2;
+}
+.header #services-menu a:hover {
+  background: #edf6fd;
+  color: #205f94;
+}
+.header #services-menu a:focus-visible {
+  outline: 2px solid #3278b8;
+  outline-offset: -2px;
+  background: #edf6fd;
+}
+@keyframes services-menu-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 1190px) {
+  .header #services-menu {
+    min-width: 0;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .header #services-menu:not([hidden]) {
+    animation: none;
+  }
+  .header #services-menu a {
+    transition: none;
+  }
+}

@@ -22,13 +22,9 @@ const VFC_ROUTE_ROOTS = [
   'callback',
   'select',
   'guide',
-  'reviews',
-  'cases',
-  'articles',
   'privacy',
   'consent',
   'terms',
-  'service-terms',
   'cookies',
   'registry',
 ];
@@ -57,7 +53,6 @@ function isKnownSiteRoute(route) {
       rest.length === 1
     );
   if (!VFC_ROUTE_ROOTS.includes(root)) return false;
-  if (root === 'articles') return !id || VFC_ARTICLES.some((a) => a.id === id);
   if (root === 'catalog') return !id || refCategories.some((c) => c[0] === id);
   if (root === 'services') return !id || !!serviceDirections[id];
   if (root === 'guide')
@@ -130,18 +125,6 @@ const VFC_PAGE_META = {
     'Гид по сертификации и декларациям',
     'Чем отличаются сертификат, декларация, протокол испытаний, ТУ и другие документы. Объясняем этапы оформления и обязанности участников.',
   ],
-  reviews: [
-    'Отзывы клиентов VFC-TEST',
-    'Отзывы клиентов о сопровождении сертификации и декларирования в VFC-TEST. Читайте отзывы на независимой площадке Яндекс Карты.',
-  ],
-  cases: [
-    'Примеры задач по сертификации',
-    'Типовые задачи производителей, импортёров и поставщиков: выбор требований, организация испытаний и подготовка документов на продукцию.',
-  ],
-  articles: [
-    'Материалы о документах на продукцию',
-    'Короткие материалы о сертификации, декларировании, технических регламентах, испытаниях и подготовке к продажам.',
-  ],
   consent: [
     'Согласие на обработку персональных данных',
     'Отдельный документ о целях, составе данных, сроке и порядке отзыва согласия на обращение в VFC-TEST.',
@@ -149,10 +132,6 @@ const VFC_PAGE_META = {
   privacy: [
     'Политика конфиденциальности',
     'Как VFC-TEST использует сведения из обращений и прикреплённые файлы для ответа на заявку. Контакты по вопросам обработки данных.',
-  ],
-  'service-terms': [
-    'Стоимость и условия услуг VFC-TEST',
-    'Как рассчитываем стоимость и сроки оформления, согласуем оплату, передачу результата, изменения задачи и обращения клиентов.',
   ],
   terms: [
     'Условия использования сайта',
@@ -193,10 +172,6 @@ function routeSeoData(route = getSiteRoute()) {
     const topic = VFC_KNOWLEDGE.guideTopics.find((t) => t.id === id);
     title = topic.title;
     description = topic.intro;
-  } else if (root === 'articles' && id) {
-    const article = VFC_ARTICLES.find((a) => a.id === id);
-    title = article.title;
-    description = article.intro;
   } else if (root === 'guide' && id === 'compare') {
     title = 'Сертификат и декларация: сравнение документов';
     description =
@@ -248,7 +223,7 @@ function updateSeoMetadata() {
   link.href = canonical;
   set('og:title', document.title, true);
   set('og:description', data.description, true);
-  set('og:type', route.startsWith('articles/') ? 'article' : 'website', true);
+  set('og:type', 'website', true);
   set('og:site_name', 'VFC-TEST', true);
   set('og:image', VFC_SITE_ORIGIN + '/assets/social-card.png', true);
   set('og:image:width', '1200', true);
@@ -260,7 +235,7 @@ function updateSeoMetadata() {
   set('twitter:card', 'summary');
   const crumbs = [{ name: vfcT('Главная'), item: VFC_SITE_ORIGIN + '/' }];
   const [root, id] = route.split('/');
-  if (id && ['services', 'catalog', 'articles', 'guide'].includes(root))
+  if (id && ['services', 'catalog', 'guide'].includes(root))
     crumbs.push({ name: vfcT(VFC_PAGE_META[root][0]), item: VFC_SITE_ORIGIN + '/' + root + '/' });
   if (route) crumbs.push({ name: data.title, item: canonical });
   const organisation = {
@@ -295,21 +270,6 @@ function updateSeoMetadata() {
       itemListElement: crumbs.map((item, i) => ({ '@type': 'ListItem', position: i + 1, ...item })),
     },
   ];
-  if (root === 'articles' && id) {
-    const article = VFC_ARTICLES.find((a) => a.id === id);
-    graph.push({
-      '@type': 'Article',
-      headline: article.title,
-      description: article.intro,
-      datePublished: article.date + 'T12:00:00+03:00',
-      dateModified: article.date + 'T12:00:00+03:00',
-      author: { '@id': organisation['@id'] },
-      publisher: { '@id': organisation['@id'] },
-      image: [VFC_SITE_ORIGIN + '/assets/social-card.png'],
-      mainEntityOfPage: canonical,
-      inLanguage: 'ru',
-    });
-  }
   let schema = document.getElementById('route-structured-data');
   if (!schema) {
     schema = document.createElement('script');
@@ -432,12 +392,24 @@ function finalizeRouteUI() {
   scheduleFloatingAssistant();
   enhanceMessengerLinks();
   closeMobileMenu();
+  applyLegacyCssClasses();
+  ensureAllDialogs();
   normalizeSiteLinks();
   enhanceTerminology();
   document.querySelectorAll('img').forEach((img) => {
     img.decoding = 'async';
     if (!img.hasAttribute('alt'))
       img.alt = img.closest('article,section')?.querySelector('h2,h3')?.textContent || 'VFC-TEST';
+  });
+  document.querySelectorAll('a.home-link,a.textlink,a.category-document-link').forEach((link) => {
+    if (!/^Подробнее/.test(link.textContent.trim())) return;
+    const card = link.closest('article,.card,.home-category');
+    const title = card?.querySelector('h2,h3,h4')?.textContent.trim();
+    if (title) link.setAttribute('aria-label', link.textContent.trim() + ': ' + title);
+  });
+  document.querySelectorAll('a.home-category').forEach((link) => {
+    const title = link.querySelector('h3')?.textContent.trim();
+    if (title) link.setAttribute('aria-label', title + ' — ' + vfcT('Подробнее'));
   });
   applyResponsiveImages();
   updateSeoMetadata();

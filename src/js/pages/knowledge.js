@@ -44,6 +44,7 @@ function wirePartnerPrice() {
   const trigger = document.querySelector('[data-partner-price]'),
     dialog = document.querySelector('.partner-price-dialog');
   if (!trigger || !dialog) return;
+  ensureDialogSupport(dialog);
   let overflow = '';
   trigger.addEventListener('click', () => {
     overflow = document.body.style.overflow;

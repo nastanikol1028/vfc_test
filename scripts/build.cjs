@@ -2,6 +2,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const crypto = require('node:crypto');
+const esbuild = require('esbuild');
 const { JSDOM, VirtualConsole } = require('jsdom');
 const root = path.resolve(__dirname, '..');
 const output = path.join(root, 'dist');
@@ -13,9 +15,38 @@ fs.mkdirSync(output, { recursive: true });
 fs.cpSync(path.join(root, 'public'), output, { recursive: true });
 const javascript = bundle(manifest.javascript);
 new vm.Script(javascript, { filename: 'app.js' });
-fs.writeFileSync(path.join(output, 'app.js'), javascript);
-fs.writeFileSync(path.join(output, 'style.css'), bundle(manifest.styles));
-const template = read('src/index.html');
+const shippedJS = esbuild.transformSync(javascript, {
+  loader: 'js',
+  charset: 'utf8',
+  minifyWhitespace: true,
+  minifySyntax: true,
+  minifyIdentifiers: false,
+  legalComments: 'none',
+  target: 'es2017',
+}).code;
+const shippedCSS = esbuild.transformSync(bundle(manifest.styles), {
+  loader: 'css',
+  charset: 'utf8',
+  minify: true,
+  legalComments: 'none',
+  target: ['chrome80', 'firefox78', 'safari13.1'],
+}).code;
+const assetName = (prefix, code, extension) =>
+  prefix +
+  '.' +
+  crypto.createHash('sha256').update(code).digest('hex').slice(0, 12) +
+  '.' +
+  extension;
+const jsName = assetName('app', shippedJS, 'js'),
+  cssName = assetName('style', shippedCSS, 'css');
+fs.writeFileSync(path.join(output, jsName), shippedJS);
+fs.writeFileSync(path.join(output, cssName), shippedCSS);
+// Old cached HTML can still request the unversioned names and revalidate.
+fs.writeFileSync(path.join(output, 'app.js'), shippedJS);
+fs.writeFileSync(path.join(output, 'style.css'), shippedCSS);
+const template = read('src/index.html')
+  .replace('src="app.js"', `src="${jsName}"`)
+  .replace('href="style.css"', `href="${cssName}"`);
 const virtualConsole = new VirtualConsole();
 virtualConsole.on('jsdomError', (error) => {
   throw error;
@@ -40,7 +71,7 @@ const dom = new JSDOM(template, {
 const context = dom.getInternalVMContext();
 vm.runInContext(javascript, context, { filename: 'app.js' });
 const routes = vm.runInContext(
-  `['', ...VFC_ROUTE_ROOTS.filter(x => x !== 'registry'), ...refCategories.map(c => 'catalog/' + c[0]), ...Object.keys(serviceDirections).map(x => 'services/' + x), ...VFC_KNOWLEDGE.guideTopics.map(t => 'guide/' + t.id), ...VFC_ARTICLES.map(a => 'articles/' + a.id), 'registry/ru', 'registry/kg', 'partners/request', 'guide/compare', 'guide/start']`,
+  `['', ...VFC_ROUTE_ROOTS.filter(x => x !== 'registry'), ...refCategories.map(c => 'catalog/' + c[0]), ...Object.keys(serviceDirections).map(x => 'services/' + x), ...VFC_KNOWLEDGE.guideTopics.map(t => 'guide/' + t.id), 'registry/ru', 'registry/kg', 'partners/request', 'guide/compare', 'guide/start']`,
   context,
 );
 const sitemap = [];

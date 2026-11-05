@@ -273,7 +273,7 @@
   font-size: 14px;
   box-shadow: none;
 }
-.page-hero-row:has(+ .clear-request) {
+.page-hero-row.has-request-after {
   align-items: start;
 }
 @media (max-width: 600px) {

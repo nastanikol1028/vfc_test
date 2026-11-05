@@ -9,6 +9,8 @@ function render() {
   const app = document.getElementById('app');
   const path = getSiteRoute();
   let [section, id] = path.split('/');
+  app.classList.toggle('non-home', !!path);
+  app.dataset.routeRoot = section || 'home';
   if (!isKnownSiteRoute(path)) {
     app.innerHTML = siteNotFound();
     window.scrollTo(0, 0);
@@ -27,7 +29,6 @@ function render() {
   else if (section === 'catalog' && id) app.innerHTML = productPage(id);
   else if (['declaration', 'certification', 'voluntary'].includes(section))
     app.innerHTML = servicePage(section);
-  else if (section === 'service-terms') app.innerHTML = serviceTermsPage();
   else if (['privacy', 'consent', 'terms', 'cookies'].includes(section))
     app.innerHTML = legalPage(section);
   else if (section === 'specifications') app.innerHTML = specifications();
@@ -37,9 +38,6 @@ function render() {
   else if (section === 'about') app.innerHTML = refAbout();
   else if (section === 'how') app.innerHTML = refHow();
   else if (section === 'marketplaces') app.innerHTML = marketplace();
-  else if (section === 'reviews') app.innerHTML = reviews();
-  else if (section === 'cases') app.innerHTML = cases();
-  else if (section === 'articles') app.innerHTML = id ? articlePage(id) : articles();
   else if (section === 'contacts') app.innerHTML = refContacts();
   else if (section === 'callback') app.innerHTML = callbackPage();
   else if (section === 'request') app.innerHTML = request();

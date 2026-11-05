@@ -377,12 +377,12 @@
   max-width: 70%;
   height: 200px;
 }
-.category-product-types article:has(.category-icon-panel) {
+.category-product-types article.has-category-icon {
   transition:
     border-color 0.2s,
     box-shadow 0.2s;
 }
-.category-product-types article:has(.category-icon-panel):hover {
+.category-product-types article.has-category-icon:hover {
   border-color: #a1c4e1;
   box-shadow: 0 10px 24px #244f7610;
 }

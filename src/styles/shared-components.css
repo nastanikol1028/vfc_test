@@ -486,43 +486,43 @@
 }
 
 /* Readable body copy, including compact forms and information cards. */
-#app:not(:has(.home-view)) p,
-#app:not(:has(.home-view)) li {
+#app.non-home p,
+#app.non-home li {
   font-size: max(16px, 1em);
 }
-#app:not(:has(.home-view)) label,
-#app:not(:has(.home-view)) .ref-consent,
-#app:not(:has(.home-view)) .clear-consent,
-#app:not(:has(.home-view)) small,
-#app:not(:has(.home-view)) .article-card time,
-#app:not(:has(.home-view)) .svc-hint {
+#app.non-home label,
+#app.non-home .ref-consent,
+#app.non-home .clear-consent,
+#app.non-home small,
+#app.non-home .article-card time,
+#app.non-home .svc-hint {
   font-size: 14px;
   line-height: 1.6;
 }
-#app:not(:has(.home-view)) .article-card p,
-#app:not(:has(.home-view)) .card-body p,
-#app:not(:has(.home-view)) .sidebox p {
+#app.non-home .article-card p,
+#app.non-home .card-body p,
+#app.non-home .sidebox p {
   font-size: 16px;
   line-height: 1.7;
 }
-#app:not(:has(.home-view)) .service-max-contact {
+#app.non-home .service-max-contact {
   font-size: 14px;
 }
-#app:not(:has(.home-view)) .article-card h3 {
+#app.non-home .article-card h3 {
   font-size: 22px;
   line-height: 1.35;
   margin: 18px 0 12px;
 }
-#app:not(:has(.home-view)) .article-card {
+#app.non-home .article-card {
   padding: 26px;
 }
-#app:not(:has(.home-view)) .article-card a:not(.textlink) {
+#app.non-home .article-card a:not(.textlink) {
   color: var(--ink);
 }
-#app:not(:has(.home-view)) .article-card a:hover {
+#app.non-home .article-card a:hover {
   color: var(--blue);
 }
-#app:not(:has(.home-view)) .article-card time {
+#app.non-home .article-card time {
   color: #526a7d;
 }
 .header-direct {

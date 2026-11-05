@@ -84,6 +84,14 @@ function validateLeadContact(form) {
               : 'Введите корректный телефон или e-mail.',
         ),
   );
+  const invalid = !!value && !valid;
+  field.setAttribute('aria-invalid', String(invalid));
+  let error = form.querySelector('[data-contact-error]');
+  if (error) {
+    const message = invalid ? field.validationMessage : '';
+    if (error.textContent !== message) error.textContent = message;
+    error.hidden = !message;
+  }
   return valid;
 }
 function setupLeadDraft(form) {
@@ -130,6 +138,34 @@ function setupLeadDraft(form) {
         ? 'tel'
         : 'text',
   );
+  const contact = form.elements.contact;
+  if (contact && !form.querySelector('[data-contact-error]')) {
+    const error = document.createElement('span');
+    error.dataset.contactError = '';
+    error.id = 'contact-error-' + form.dataset.draftKey;
+    error.className = 'contact-field-error';
+    error.setAttribute('aria-live', 'polite');
+    error.hidden = true;
+    contact.insertAdjacentElement('afterend', error);
+    contact.setAttribute(
+      'aria-describedby',
+      [contact.getAttribute('aria-describedby'), error.id].filter(Boolean).join(' '),
+    );
+    contact.addEventListener('blur', () => {
+      contact.dataset.validationTouched = 'true';
+      validateLeadContact(form);
+    });
+    contact.addEventListener('invalid', () => {
+      contact.dataset.validationTouched = 'true';
+      validateLeadContact(form);
+    });
+    form.addEventListener('reset', () => {
+      delete contact.dataset.validationTouched;
+      contact.setAttribute('aria-invalid', 'false');
+      error.hidden = true;
+      error.textContent = '';
+    });
+  }
   validateLeadContact(form);
 }
 function initLeadDrafts() {

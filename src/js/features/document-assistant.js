@@ -295,6 +295,7 @@ function initDocumentAssistant() {
   });
   dialog.addEventListener('close', () => {
     document.body.style.overflow = savedOverflow;
+    updateFloatingAssistant();
     open.focus({ preventScroll: true });
   });
 }

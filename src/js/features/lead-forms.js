@@ -74,6 +74,8 @@ function wirePhotoForm(form) {
         li.append(badge);
       }
       name.textContent = item.file.name;
+      name.title = item.file.name;
+      name.tabIndex = 0;
       remove.type = 'button';
       remove.textContent = '×';
       remove.setAttribute('aria-label', vfcT('Удалить файл') + ' ' + item.file.name);

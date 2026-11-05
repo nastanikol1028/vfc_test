@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/nastanikol1028/vfc_test#readme",
   "devDependencies": {
+    "esbuild": "0.28.2",
     "jsdom": "26.1.0",
     "playwright-core": "1.56.1",
     "prettier": "3.6.2"
