@@ -7,7 +7,7 @@ const VFC_RESPONSIVE_IMAGES = {
   },
   'assets/rosaccreditation-clean.webp': {
     sources:
-      'assets/rosaccreditation-clean-w320.webp 320w, assets/rosaccreditation-clean-w640.webp 640w, assets/rosaccreditation-clean-w960.webp 960w, assets/rosaccreditation-clean.webp 1600w',
+      'assets/rosaccreditation-clean-w320-alpha.webp 320w, assets/rosaccreditation-clean-w640-alpha.webp 640w, assets/rosaccreditation-clean-w960-alpha.webp 960w, assets/rosaccreditation-clean.webp 1600w',
     width: 1600,
     height: 535,
   },
@@ -31,7 +31,7 @@ const VFC_RESPONSIVE_IMAGES = {
   },
   'assets/tulpar-system.webp': {
     sources:
-      'assets/tulpar-system-w320.webp 320w, assets/tulpar-system-w640.webp 640w, assets/tulpar-system-w960.webp 960w, assets/tulpar-system.webp 1600w',
+      'assets/tulpar-system-w320-alpha.webp 320w, assets/tulpar-system-w640-alpha.webp 640w, assets/tulpar-system-w960-alpha.webp 960w, assets/tulpar-system.webp 1600w',
     width: 1600,
     height: 878,
   },
