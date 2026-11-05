@@ -11,11 +11,11 @@ const services = () =>
   ]
     .map(
       (x, i) =>
-        `<button type="button" role="tab" id="svc-tab-${x[0]}" aria-controls="svc-panel" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-service="${x[0]}">${x[1]}</button>`,
+        `<a href="/services/${x[0]}/" role="tab" id="svc-tab-${x[0]}" aria-controls="svc-panel" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-service="${x[0]}">${x[1]}</a>`,
     )
     .join(
       '',
-    )}</div><p class="svc-hint">Выберите направление — информация откроется здесь</p></section><section class="svc-panel" id="svc-panel" role="tabpanel" aria-labelledby="svc-tab-declaration" tabindex="0"></section><section class="svc-factors"><h2>От чего зависят стоимость и сроки</h2><div class="svc-factor-grid">${[
+    )}</div><p class="svc-hint">Выберите направление — информация откроется здесь</p></section><section class="svc-panel" id="svc-panel" role="tabpanel" aria-labelledby="svc-tab-declaration" tabindex="0"></section><section class="service-estimate-note"><h2>Стоимость и сроки — по вашей задаче</h2><p>Рассчитываем индивидуально после изучения продукции и необходимых процедур. Состав работ, стоимость и сроки согласуем до начала оформления.</p><a class="home-link" href="/service-terms/">Порядок расчёта, оплаты и работы с обращениями →</a></section><section class="svc-factors"><h2>От чего зависят стоимость и сроки</h2><div class="svc-factor-grid">${[
     [
       '01',
       'Характеристики продукции',

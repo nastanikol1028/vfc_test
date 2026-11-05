@@ -11,7 +11,9 @@
     "format": "prettier --write src scripts",
     "format:check": "prettier --check src scripts",
     "test:browser": "node scripts/smoke.cjs",
-    "test:regression": "node scripts/regression.cjs"
+    "test:regression": "node scripts/regression.cjs",
+    "indexnow": "node scripts/notify-indexnow.cjs",
+    "test:seo": "node scripts/seo-regression.cjs"
   },
   "repository": {
     "type": "git",

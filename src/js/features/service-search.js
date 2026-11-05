@@ -18,6 +18,13 @@ function wireServices() {
       history.pushState(null, '', cleanSitePath('services/' + key));
     }
     const d = serviceDirections[key];
+    const isDetail = getSiteRoute().startsWith('services/');
+    if (isDetail) {
+      document.querySelector('.svc-intro h1').textContent = d.title;
+      document.querySelector('.svc-intro > p').textContent = d.description;
+      document.querySelector('.svc-breadcrumb').innerHTML =
+        `<a href="/">${vfcT('Главная')}</a><span aria-hidden="true">/</span><a href="/services/">${vfcT('Услуги')}</a><span aria-hidden="true">/</span><span aria-current="page">${vfcT(d.title)}</span>`;
+    }
     const factors = document.querySelector('.svc-factors');
     if (factors) factors.hidden = key === 'specifications';
     tabs.forEach((t) => {
@@ -27,15 +34,19 @@ function wireServices() {
       if (selected && focus) t.focus();
     });
     panel.setAttribute('aria-labelledby', 'svc-tab-' + key);
-    panel.innerHTML = `<div class="svc-panel-top"><span class="home-kicker">СОПРОВОЖДЕНИЕ НА КАЖДОМ ЭТАПЕ</span><h2>${d.title}</h2><p>${d.description}</p></div>${key === 'voluntary' ? voluntaryTypesBlock() : ''}<div class="svc-detail-grid ${['declaration', 'certification'].includes(key) ? '' : 'svc-detail-text'}">${['declaration', 'certification'].includes(key) ? serviceRegistryForm(key) : ''}<div class="svc-details"><div><h3>Кому подойдет</h3><p>${d.audience}</p></div><div><h3>Что берем на себя</h3><p>${d.work}</p></div><div><h3>Что подготовить</h3><p>${d.documents}</p></div><a href="#/request" class="btn svc-estimate">Получить предварительный расчет ↗</a></div></div>`;
+    panel.innerHTML = `<div class="svc-panel-top"><span class="home-kicker">СОПРОВОЖДЕНИЕ НА КАЖДОМ ЭТАПЕ</span><h2>${d.title}</h2><p>${d.description}</p></div>${key === 'voluntary' ? voluntaryTypesBlock() : ''}${key === 'specifications' ? technicalDocumentationDetails() : ''}<div class="svc-detail-grid ${['declaration', 'certification'].includes(key) ? '' : 'svc-detail-text'}">${['declaration', 'certification'].includes(key) ? serviceRegistryForm(key) : ''}<div class="svc-details"><div><h3>Кому подойдет</h3><p>${d.audience}</p></div><div><h3>Что берем на себя</h3><p>${d.work}</p></div><div><h3>Что подготовить</h3><p>${d.documents}</p></div><a href="#/request" class="btn svc-estimate">Получить предварительный расчет ↗</a></div></div>`;
     wireRegistry();
     enhanceTerminology(panel);
     normalizeSiteLinks();
     if (typeof vfcApplyLanguage === 'function') vfcApplyLanguage();
+    applyResponsiveImages();
     updateSeoMetadata();
   }
   tabs.forEach((t, i) => {
-    t.addEventListener('click', () => activate(t.dataset.service));
+    t.addEventListener('click', (event) => {
+      event.preventDefault();
+      activate(t.dataset.service);
+    });
     t.addEventListener('keydown', (e) => {
       let next;
       if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (i + 1) % tabs.length;

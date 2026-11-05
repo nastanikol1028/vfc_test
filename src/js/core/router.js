@@ -27,6 +27,7 @@ function render() {
   else if (section === 'catalog' && id) app.innerHTML = productPage(id);
   else if (['declaration', 'certification', 'voluntary'].includes(section))
     app.innerHTML = servicePage(section);
+  else if (section === 'service-terms') app.innerHTML = serviceTermsPage();
   else if (['privacy', 'consent', 'terms', 'cookies'].includes(section))
     app.innerHTML = legalPage(section);
   else if (section === 'specifications') app.innerHTML = specifications();
@@ -38,12 +39,13 @@ function render() {
   else if (section === 'marketplaces') app.innerHTML = marketplace();
   else if (section === 'reviews') app.innerHTML = reviews();
   else if (section === 'cases') app.innerHTML = cases();
-  else if (section === 'articles') app.innerHTML = articles();
+  else if (section === 'articles') app.innerHTML = id ? articlePage(id) : articles();
   else if (section === 'contacts') app.innerHTML = refContacts();
   else if (section === 'callback') app.innerHTML = callbackPage();
   else if (section === 'request') app.innerHTML = request();
   else if (section === 'select') app.innerHTML = select();
   else app.innerHTML = siteNotFound();
+  refineGuidePage();
   document
     .querySelector('.floating')
     ?.classList.toggle('hidden', ['select', 'request', 'callback'].includes(section));

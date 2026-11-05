@@ -40,7 +40,7 @@ const dom = new JSDOM(template, {
 const context = dom.getInternalVMContext();
 vm.runInContext(javascript, context, { filename: 'app.js' });
 const routes = vm.runInContext(
-  `['', ...VFC_ROUTE_ROOTS.filter(x => x !== 'registry'), ...refCategories.map(c => 'catalog/' + c[0]), ...Object.keys(serviceDirections).map(x => 'services/' + x), ...VFC_KNOWLEDGE.guideTopics.map(t => 'guide/' + t.id), 'registry/ru', 'registry/kg', 'partners/request', 'guide/compare', 'guide/start']`,
+  `['', ...VFC_ROUTE_ROOTS.filter(x => x !== 'registry'), ...refCategories.map(c => 'catalog/' + c[0]), ...Object.keys(serviceDirections).map(x => 'services/' + x), ...VFC_KNOWLEDGE.guideTopics.map(t => 'guide/' + t.id), ...VFC_ARTICLES.map(a => 'articles/' + a.id), 'registry/ru', 'registry/kg', 'partners/request', 'guide/compare', 'guide/start']`,
   context,
 );
 const sitemap = [];
@@ -64,14 +64,17 @@ for (const route of [...new Set(routes), '__not_found__']) {
       : path.join(output, route, 'index.html');
   fs.mkdirSync(path.dirname(destination), { recursive: true });
   fs.writeFileSync(destination, html);
-  if (!vm.runInContext('routeSeoData().noindex', context))
+  if (
+    !vm.runInContext('routeSeoData().noindex', context) &&
+    !vm.runInContext('VFC_ROUTE_ALIASES', context)[route]
+  )
     sitemap.push(document.querySelector('link[rel=canonical]').href);
 }
 const origin = vm.runInContext('VFC_SITE_ORIGIN', context);
 fs.writeFileSync(
   path.join(output, 'sitemap.xml'),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
-    sitemap.map((url) => '<url><loc>' + url + '</loc></url>').join('') +
+    [...new Set(sitemap)].map((url) => '<url><loc>' + url + '</loc></url>').join('') +
     '</urlset>\n',
 );
 fs.writeFileSync(

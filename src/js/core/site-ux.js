@@ -1,5 +1,11 @@
 /* Shared navigation, accessibility, metadata and lead feedback. */
 const VFC_SITE_ORIGIN = 'https://vfc-test.annikol396.chatgpt.site';
+const VFC_ROUTE_ALIASES = {
+  declaration: 'services/declaration',
+  certification: 'services/certification',
+  voluntary: 'services/voluntary',
+  specifications: 'services/specifications',
+};
 const VFC_ROUTE_ROOTS = [
   'services',
   'catalog',
@@ -22,6 +28,7 @@ const VFC_ROUTE_ROOTS = [
   'privacy',
   'consent',
   'terms',
+  'service-terms',
   'cookies',
   'registry',
 ];
@@ -37,7 +44,7 @@ function getSiteRoute() {
   raw = raw.replace(/^\/+|\/+$/g, '');
   if (raw === 'index.html') return '';
   if (raw === 'pick-services') return 'services';
-  return raw;
+  return VFC_ROUTE_ALIASES[raw] || raw;
 }
 function isKnownSiteRoute(route) {
   if (!route) return true;
@@ -50,6 +57,7 @@ function isKnownSiteRoute(route) {
       rest.length === 1
     );
   if (!VFC_ROUTE_ROOTS.includes(root)) return false;
+  if (root === 'articles') return !id || VFC_ARTICLES.some((a) => a.id === id);
   if (root === 'catalog') return !id || refCategories.some((c) => c[0] === id);
   if (root === 'services') return !id || !!serviceDirections[id];
   if (root === 'guide')
@@ -61,12 +69,16 @@ function isKnownSiteRoute(route) {
   return !id;
 }
 function cleanSitePath(route) {
+  route = VFC_ROUTE_ALIASES[route] || route;
   if (route.startsWith('catalog/') && route.split('/').length > 2)
     route = route.split('/').slice(0, 2).join('/');
   return route ? '/' + route.replace(/\/+$/, '') + '/' : '/';
 }
 function syncLegacyLocation(route) {
-  if (location.hash.startsWith('#/') && isKnownSiteRoute(route))
+  if (
+    isKnownSiteRoute(route) &&
+    (location.hash.startsWith('#/') || location.pathname !== cleanSitePath(route))
+  )
     history.replaceState(null, '', cleanSitePath(route));
 }
 const VFC_PAGE_META = {
@@ -138,6 +150,10 @@ const VFC_PAGE_META = {
     'Политика конфиденциальности',
     'Как VFC-TEST использует сведения из обращений и прикреплённые файлы для ответа на заявку. Контакты по вопросам обработки данных.',
   ],
+  'service-terms': [
+    'Стоимость и условия услуг VFC-TEST',
+    'Как рассчитываем стоимость и сроки оформления, согласуем оплату, передачу результата, изменения задачи и обращения клиентов.',
+  ],
   terms: [
     'Условия использования сайта',
     'Условия использования информации VFC-TEST. Состав услуги, стоимость и сроки оформления согласовываются после анализа продукции.',
@@ -177,6 +193,18 @@ function routeSeoData(route = getSiteRoute()) {
     const topic = VFC_KNOWLEDGE.guideTopics.find((t) => t.id === id);
     title = topic.title;
     description = topic.intro;
+  } else if (root === 'articles' && id) {
+    const article = VFC_ARTICLES.find((a) => a.id === id);
+    title = article.title;
+    description = article.intro;
+  } else if (root === 'guide' && id === 'compare') {
+    title = 'Сертификат и декларация: сравнение документов';
+    description =
+      'Сравниваем сертификат и декларацию: кто оформляет документ, какие доказательства нужны и где проверить результат.';
+  } else if (root === 'guide' && id === 'start') {
+    title = 'С чего начать оформление документов на продукцию';
+    description =
+      'Порядок подготовки к оформлению: описание товара, проверка требований, выбор процедуры и согласование работ.';
   } else if (root === 'registry') {
     title = id === 'kg' ? 'Проверка документа Кыргызстана' : 'Проверка документа в Росаккредитации';
     description =
@@ -185,11 +213,13 @@ function routeSeoData(route = getSiteRoute()) {
         : 'Проверка сертификатов и деклараций в реестрах Росаккредитации. Выберите вид документа и перейдите в официальный поиск.';
   } else if (root === 'partners' && id === 'request') {
     title = 'Обсудить партнёрское сотрудничество';
+    description =
+      'Обращение партнёра VFC-TEST: расскажите о продукции и задаче клиента для индивидуального расчёта условий сотрудничества.';
   }
   return {
     title: vfcT(title),
     description: vfcT(description),
-    noindex: ['request', 'select', 'callback'].includes(root),
+    noindex: ['request', 'select', 'callback', 'privacy', 'consent'].includes(root),
   };
 }
 function updateSeoMetadata() {
@@ -218,13 +248,68 @@ function updateSeoMetadata() {
   link.href = canonical;
   set('og:title', document.title, true);
   set('og:description', data.description, true);
-  set('og:type', 'website', true);
+  set('og:type', route.startsWith('articles/') ? 'article' : 'website', true);
+  set('og:site_name', 'VFC-TEST', true);
+  set('og:image', VFC_SITE_ORIGIN + '/assets/social-card.png', true);
+  set('og:image:width', '1200', true);
+  set('og:image:height', '630', true);
+  set('og:image:alt', 'VFC-TEST — оформление документов на продукцию', true);
+  set('twitter:image', VFC_SITE_ORIGIN + '/assets/social-card.png');
   set('og:url', canonical, true);
   set('og:locale', { ru: 'ru_RU', en: 'en_US', zh: 'zh_CN' }[vfcLanguage], true);
   set('twitter:card', 'summary');
-  const name = route ? data.title : vfcT('Главная');
-  const items = [{ name: vfcT('Главная'), item: VFC_SITE_ORIGIN + '/' }];
-  if (route) items.push({ name, item: canonical });
+  const crumbs = [{ name: vfcT('Главная'), item: VFC_SITE_ORIGIN + '/' }];
+  const [root, id] = route.split('/');
+  if (id && ['services', 'catalog', 'articles', 'guide'].includes(root))
+    crumbs.push({ name: vfcT(VFC_PAGE_META[root][0]), item: VFC_SITE_ORIGIN + '/' + root + '/' });
+  if (route) crumbs.push({ name: data.title, item: canonical });
+  const organisation = {
+    '@type': 'Organization',
+    '@id': VFC_SITE_ORIGIN + '/#organization',
+    name: 'VFC-TEST',
+    legalName: 'ООО «ВФК-ТЕСТ»',
+    url: VFC_SITE_ORIGIN + '/',
+    logo: { '@type': 'ImageObject', url: VFC_SITE_ORIGIN + '/assets/logo.svg' },
+    telephone: '+7-968-760-97-22',
+    email: 'm1@vfc-test.ru',
+    taxID: '5047285907',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'ул. Смольная, д. 24А, помещ. 1/14',
+      addressLocality: 'Москва',
+      postalCode: '125445',
+      addressCountry: 'RU',
+    },
+  };
+  const graph = [
+    organisation,
+    {
+      '@type': 'WebSite',
+      '@id': VFC_SITE_ORIGIN + '/#website',
+      url: VFC_SITE_ORIGIN + '/',
+      name: 'VFC-TEST',
+      publisher: { '@id': organisation['@id'] },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: crumbs.map((item, i) => ({ '@type': 'ListItem', position: i + 1, ...item })),
+    },
+  ];
+  if (root === 'articles' && id) {
+    const article = VFC_ARTICLES.find((a) => a.id === id);
+    graph.push({
+      '@type': 'Article',
+      headline: article.title,
+      description: article.intro,
+      datePublished: article.date + 'T12:00:00+03:00',
+      dateModified: article.date + 'T12:00:00+03:00',
+      author: { '@id': organisation['@id'] },
+      publisher: { '@id': organisation['@id'] },
+      image: [VFC_SITE_ORIGIN + '/assets/social-card.png'],
+      mainEntityOfPage: canonical,
+      inLanguage: 'ru',
+    });
+  }
   let schema = document.getElementById('route-structured-data');
   if (!schema) {
     schema = document.createElement('script');
@@ -232,19 +317,12 @@ function updateSeoMetadata() {
     schema.type = 'application/ld+json';
     document.head.append(schema);
   }
-  schema.textContent = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      ...item,
-    })),
-  });
+  schema.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
 }
+
 function normalizeSiteLinks() {
-  document.querySelectorAll('a[href^="#/"]').forEach((link) => {
-    const route = link.getAttribute('href').slice(2);
+  document.querySelectorAll('a[href^="#/"],a[href^="/"]').forEach((link) => {
+    const route = link.getAttribute('href').replace(/^#?\//, '').replace(/\/$/, '');
     if (isKnownSiteRoute(route)) link.setAttribute('href', cleanSitePath(route));
   });
 }
@@ -361,6 +439,7 @@ function finalizeRouteUI() {
     if (!img.hasAttribute('alt'))
       img.alt = img.closest('article,section')?.querySelector('h2,h3')?.textContent || 'VFC-TEST';
   });
+  applyResponsiveImages();
   updateSeoMetadata();
   routeTransitionEnd();
   document.querySelector('.back-top')?.classList.toggle('is-shown', window.scrollY > 500);

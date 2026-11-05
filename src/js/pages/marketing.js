@@ -8,7 +8,7 @@ const reviews = () =>
   );
 
 const cases = () =>
-  `${pageHero('Кейсы', 'Решения для разных товарных групп', 'Каждая продукция требует отдельного анализа. Ниже — типовые примеры того, с чем к нам обращаются.')}<section class="section" style="padding-top:10px"><div class="wrap"><div class="grid three">${[
+  `${pageHero('Кейсы', 'Решения для разных товарных групп', 'Каждая продукция требует отдельного анализа. Ниже — типовые примеры того, с чем к нам обращаются.')}<section class="section" style="padding-top:10px"><div class="wrap"><h2>Типовые задачи клиентов</h2><div class="grid three">${[
     [
       'Производитель мебели',
       'Мебель и товары для дома',
@@ -49,43 +49,8 @@ const cases = () =>
     )}</div><p class="notice-banner">Примеры описывают типовые задачи и не являются подтверждёнными кейсами конкретных клиентов.</p></div></section>`;
 
 const articles = () =>
-  `${pageHero('Статьи', 'Разбираемся в требованиях вместе', 'Короткие ответы на вопросы о документах, испытаниях и подготовке продукции к продаже.')}<section class="section" style="padding-top:10px"><div class="wrap"><div class="grid three">${[
-    [
-      'Как определить, нужен ли сертификат или декларация?',
-      'Разбираем, от чего зависит форма подтверждения соответствия и какие сведения собрать перед консультацией.',
-      '5 минут',
-    ],
-    [
-      'Что проверить перед выходом на маркетплейс?',
-      'Список вопросов о документах, маркировке и карточке товара перед началом продаж.',
-      '4 минуты',
-    ],
-    [
-      'Какие сведения подготовить для расчёта?',
-      'Что ускорит первичную оценку продукции и поможет составить план работ.',
-      '3 минуты',
-    ],
-    [
-      'Зачем нужны испытания продукции?',
-      'Как образцы и протоколы испытаний участвуют в подтверждении соответствия.',
-      '6 минут',
-    ],
-    [
-      'Что такое технический регламент ЕАЭС?',
-      'Объясняем, как регламенты устанавливают требования к отдельным товарным группам.',
-      '5 минут',
-    ],
-    [
-      'Можно ли объединить товары в один документ?',
-      'От чего зависит область действия документа и как оценивают модельный ряд.',
-      '4 минуты',
-    ],
-  ]
-    .map(
-      (x) =>
-        `<article class="card article-card"><small>Памятка · ${x[2]}</small><h3 style="margin-top:12px">${x[0]}</h3><p>${x[1]}</p><a class="textlink" href="#/request">Задать вопрос</a></article>`,
-    )
-    .join('')}</div><div style="margin-top:28px">${cta()}</div></div></section>`;
-
-const contacts = () =>
-  `${pageHero('Контакты', 'Давайте обсудим вашу задачу', 'Свяжитесь с нами удобным способом или оставьте заявку — уточним детали и подскажем дальнейшие шаги.')}<section class="section" style="padding-top:10px"><div class="wrap"><div class="contact-grid"><div><div class="contact-list"><div class="contact-item"><b>Телефон</b><a href="https://max.ru/u/f9LHodD0cOIsOp47Fkd1RynDYU741JCFP3wpgXuxFMDnc_w0sSP2vFELvwI" target="_blank" rel="noopener noreferrer" title="Написать в MAX">+7 (968) 760-97-22</a></div><div class="contact-item"><b>Электронная почта</b><a href="mailto:info@vfc-test.ru">info@vfc-test.ru</a></div><div class="contact-item"><b>Напишите в мессенджер</b><span style="font-size:13px"><a href="https://wa.me/79687609722" target="_blank" rel="noreferrer">WhatsApp</a> · <a href="https://t.me/vfc_test" target="_blank" rel="noreferrer">Telegram</a></span></div><div class="contact-item"><b>Время работы</b><span style="font-size:14px">Пн–Пт, 09:00–18:00</span></div></div><div style="margin-top:30px"><h3>Наш офис</h3><p style="color:var(--muted);font-size:12px">Адрес офиса уточните у менеджера перед визитом.</p></div></div><div class="mapbox"><div style="position:relative"><div class="map-pin"><span>⌖</span></div><p>Свяжитесь с нами,<br>чтобы получить схему проезда</p></div></div></div><div style="margin-top:35px">${formCard('Давайте обсудим вашу задачу')}</div></div></section>`;
+  `${pageHero('Статьи', 'Статьи о сертификации продукции', 'Практические материалы о документах, испытаниях и подготовке продукции к продаже.')}<section class="section"><div class="wrap"><h2>Материалы и памятки</h2><div class="grid three">${VFC_ARTICLES.map((a) => `<article class="card article-card"><time datetime="${a.date}">5 ноября 2026 года</time><h3><a href="/articles/${a.id}/">${a.title}</a></h3><p>${a.intro}</p><a class="textlink" href="/articles/${a.id}/">Читать статью →</a></article>`).join('')}</div>${cta()}</div></section>`;
+function articlePage(id) {
+  const a = VFC_ARTICLES.find((a) => a.id === id);
+  return `<section class="legal-page" lang="ru" data-language-ignore><article class="legal-article"><nav class="crumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span>›</span><a href="/articles/">Статьи</a><span>›</span><span aria-current="page">${a.title}</span></nav><header class="legal-header"><h1>${a.title}</h1><p class="legal-edition"><time datetime="${a.date}">5 ноября 2026 года</time> · Редакция VFC-TEST</p><p>${a.intro}</p></header><div class="legal-document">${a.sections.map((s) => `<section><h2>${s.title}</h2><p>${s.text}</p></section>`).join('')}<aside class="notice-banner">Материал носит справочный характер. Требования к конкретной продукции необходимо проверять по действующим редакциям документов.</aside><section><h2>Полезные материалы</h2><p><a href="/guide/">Гид по документам</a> · <a href="/catalog/">Категории продукции</a></p></section></div><footer class="legal-actions"><a href="/request/">Обсудить вашу продукцию</a><a href="/articles/">Все статьи</a></footer></article></section>`;
+}

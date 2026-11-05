@@ -9,6 +9,7 @@
     "src/js/data/regulation-scopes.js",
     "src/js/components/category-icons.js",
     "src/js/pages/category-content.js",
+    "src/js/data/editorial.js",
     "src/js/core/site-ux.js",
     "src/js/data/products.js",
     "src/js/components/page-shell.js",
@@ -48,6 +49,8 @@
     "src/js/features/document-assistant.js",
     "src/js/components/messenger-links.js",
     "src/js/features/floating-assistant.js",
+    "src/js/data/responsive-images.js",
+    "src/js/features/seo-improvements.js",
     "src/js/main.js"
   ],
   "styles": [

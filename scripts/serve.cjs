@@ -27,6 +27,21 @@ http
       response.writeHead(400).end();
       return;
     }
+    const aliases = {
+      '/index.html': '/',
+      '/declaration': '/services/declaration/',
+      '/certification': '/services/certification/',
+      '/voluntary': '/services/voluntary/',
+      '/specifications': '/services/specifications/',
+    };
+    const key = name.replace(/\/index\.html$/, '').replace(/\/$/, '');
+    const target = aliases[name] || aliases[key];
+    if (target) {
+      response
+        .writeHead(301, { Location: target + new URL(request.url, 'http://localhost').search })
+        .end();
+      return;
+    }
     let file = path.resolve(root, '.' + name);
     if (!file.startsWith(root + path.sep) && file !== root) {
       response.writeHead(403).end();
