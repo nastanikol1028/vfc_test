@@ -4556,3 +4556,11 @@ Object.assign(VFC_TRANSLATIONS, {
       zh: '申请草稿文字临时保存在当前浏览器标签页中，可通过“清除草稿”删除。提交前，附件仅保存在已打开页面的内存中，站内跳转时会保留；刷新页面后需重新添加附件。',
     },
 });
+
+Object.assign(VFC_TRANSLATIONS, {
+  'Поможем подобрать оптимальные условия для выгодного сотрудничества. Берёмся за сложные задачи и предлагаем разные варианты оформления.':
+    {
+      en: 'We help find the best terms for a mutually beneficial partnership. We take on complex tasks and offer different options for preparing documents.',
+      zh: '我们协助选择有利于合作的最佳条件，承接复杂任务并提供不同的文件办理方案。',
+    },
+});

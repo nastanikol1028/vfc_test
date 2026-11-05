@@ -276,3 +276,41 @@
     transform: none;
   }
 }
+
+/* Leave breathing room between the last request card and the footer. */
+#app > .home-view,
+#app > .services-view {
+  padding-bottom: 72px;
+}
+.reference-page .about-company {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+.about-company-copy {
+  max-width: 960px;
+}
+.reference-page .about-company h2 {
+  margin-bottom: 26px;
+}
+.reference-page .about-company-copy p {
+  margin: 0 0 22px;
+  font-size: 20px;
+  line-height: 1.7;
+}
+.reference-page .about-company-copy p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 600px) {
+  #app > .home-view,
+  #app > .services-view {
+    padding-bottom: 44px;
+  }
+  .reference-page .about-company h2 {
+    margin-bottom: 20px;
+  }
+  .reference-page .about-company-copy p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+}
