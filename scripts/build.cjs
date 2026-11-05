@@ -112,5 +112,21 @@ fs.writeFileSync(
   path.join(output, 'robots.txt'),
   `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`,
 );
+// Keep downloadable legal drafts aligned with the displayed language.
+for (const kind of ['privacy', 'consent']) {
+  for (const language of ['en', 'zh']) {
+    dom.reconfigure({ url: origin + '/' + kind + '/' });
+    vm.runInContext(`vfcLanguage = '${language}'; render();`, context);
+    const document = dom.window.document;
+    const heading = document.querySelector('.legal-header h1').textContent;
+    const parts = [...document.querySelector('.legal-document').children].map(
+      (element) => (element.tagName === 'H2' ? '## ' : '') + element.textContent.trim(),
+    );
+    fs.writeFileSync(
+      path.join(output, 'documents', `${kind}.${language}.md`),
+      '# ' + heading + '\n\n' + parts.join('\n\n') + '\n',
+    );
+  }
+}
 dom.window.close();
 console.log(`Built ${routes.length + 1} static pages in dist/.`);

@@ -50,13 +50,9 @@ function wirePhotoForm(form) {
     );
     list.replaceChildren();
     counter.textContent = files.length
-      ? vfcT('Файлов:') +
-        ' ' +
-        files.length +
-        ' / 10 · ' +
-        (files.reduce((n, item) => n + item.file.size, 0) / 1024 / 1024).toFixed(1) +
-        ' ' +
-        vfcT('МБ')
+      ? vfcT(
+          `Файлов: ${files.length} / 10 · ${(files.reduce((n, item) => n + item.file.size, 0) / 1024 / 1024).toFixed(1)} МБ`,
+        )
       : vfcT('Можно добавить до 10 файлов');
     files.forEach((item, i) => {
       const li = document.createElement('li'),
@@ -75,10 +71,11 @@ function wirePhotoForm(form) {
       }
       name.textContent = item.file.name;
       name.title = item.file.name;
+      name.setAttribute('data-language-ignore', '');
       name.tabIndex = 0;
       remove.type = 'button';
       remove.textContent = '×';
-      remove.setAttribute('aria-label', vfcT('Удалить файл') + ' ' + item.file.name);
+      remove.setAttribute('aria-label', vfcT('Удалить файл ' + item.file.name));
       remove.addEventListener('click', () => {
         release(item);
         files.splice(i, 1);
@@ -127,7 +124,13 @@ function wirePhotoForm(form) {
           : null,
       });
     }
-    error.textContent = [...new Set(errors)].join(' ');
+    error.replaceChildren();
+    [...new Set(errors)].forEach((message, index) => {
+      if (index) error.append(document.createTextNode(' '));
+      const span = document.createElement('span');
+      span.textContent = message;
+      error.append(span);
+    });
     input.value = '';
     draw();
   }

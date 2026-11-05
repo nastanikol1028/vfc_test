@@ -10,12 +10,19 @@ const vfcTranslationIndex = new Map(
     target,
   ]),
 );
-function vfcT(value) {
+function vfcTranslateSource(value) {
   if (vfcLanguage === 'ru' || !value) return value;
   const text = vfcNormalize(value),
     direct = vfcTranslationIndex.get(text.toLocaleLowerCase('ru'));
   if (direct) return direct[vfcLanguage];
   let m;
+  if ((m = text.match(/^Удалить файл (.+)$/)))
+    return (vfcLanguage === 'en' ? 'Remove file ' : '删除文件 ') + m[1];
+  if ((m = text.match(/^Файлов: (\d+) \/ 10 · ([\d.]+) МБ$/)))
+    return vfcLanguage === 'en'
+      ? `Files: ${m[1]} / 10 · ${m[2]} MB`
+      : `文件：${m[1]} / 10 · ${m[2]} MB`;
+
   if ((m = text.match(/^Вопрос (\d+) из 5$/)))
     return vfcLanguage === 'en' ? `Question ${m[1]} of 5` : `第${m[1]}题，共5题`;
   if ((m = text.match(/^Найдено категорий: (\d+)$/)))
@@ -38,6 +45,21 @@ function vfcT(value) {
       : `。此结果仅供参考，具体要求取决于准确用途与成分。通过“${vfcT(m[1])}”销售时，请与经理讨论符合性评估及标签要求。`;
   return value.replace(/ТР ТС/g, 'TR CU').replace(/ТР ЕАЭС/g, 'TR EAEU');
 }
+// Remember strings generated with vfcT before they enter the DOM. This keeps
+// dynamic tooltips and validation messages switchable without resetting forms.
+const vfcRenderedSources = new Map();
+function vfcResolveSource(value) {
+  if (!value) return value;
+  const canonical = vfcRenderedSources.get(vfcNormalize(value));
+  return canonical ? value.match(/^\s*/)[0] + canonical + value.match(/\s*$/)[0] : value;
+}
+function vfcT(value) {
+  const source = vfcResolveSource(value);
+  const translated = vfcTranslateSource(source);
+  if (source && translated && vfcNormalize(source) !== vfcNormalize(translated))
+    vfcRenderedSources.set(vfcNormalize(translated), vfcNormalize(source));
+  return translated;
+}
 const vfcTextSources = new WeakMap(),
   vfcAttributeSources = new WeakMap();
 let vfcTranslationObserver = null,
@@ -49,6 +71,14 @@ function vfcApplyLanguage() {
   try {
     document.documentElement.lang = vfcLanguage === 'zh' ? 'zh-CN' : vfcLanguage;
     document.documentElement.dataset.language = vfcLanguage;
+    document.querySelectorAll('.legal-actions a[download]').forEach((link) => {
+      const kind = getSiteRoute().split('/')[0];
+      if (['privacy', 'consent'].includes(kind))
+        link.href = `/documents/${kind}${vfcLanguage === 'ru' ? '' : '.' + vfcLanguage}.md`;
+    });
+    document
+      .querySelectorAll('.legal-page')
+      .forEach((page) => page.setAttribute('lang', document.documentElement.lang));
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
         return node.parentElement?.closest('script,style,[data-language-ignore],textarea')
@@ -60,7 +90,7 @@ function vfcApplyLanguage() {
     while ((node = walker.nextNode())) {
       let record = vfcTextSources.get(node);
       if (!record || node.nodeValue !== record.last)
-        record = { source: node.nodeValue, last: node.nodeValue };
+        record = { source: vfcResolveSource(node.nodeValue), last: node.nodeValue };
       const source = record.source,
         translated = vfcT(source),
         leading = source.match(/^\s*/)[0],
@@ -77,7 +107,8 @@ function vfcApplyLanguage() {
         if (!element.hasAttribute(attr)) continue;
         const current = element.getAttribute(attr);
         let record = attrs[attr];
-        if (!record || current !== record.last) record = { source: current, last: current };
+        if (!record || current !== record.last)
+          record = { source: vfcResolveSource(current), last: current };
         const next = vfcT(record.source);
         if (next !== current) element.setAttribute(attr, next);
         record.last = next;

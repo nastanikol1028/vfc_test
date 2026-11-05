@@ -1,6 +1,7 @@
 {
   "javascript": [
     "src/js/data/translations.js",
+    "src/js/data/translation-corrections.js",
     "src/js/core/i18n.js",
     "src/js/features/product-classifier.js",
     "src/js/data/knowledge.js",
