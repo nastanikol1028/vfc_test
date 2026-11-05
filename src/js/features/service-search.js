@@ -1,8 +1,18 @@
 // features/service-search.js
+function syncServiceTabOrientation() {
+  document
+    .querySelector('.svc-tabs')
+    ?.setAttribute(
+      'aria-orientation',
+      window.matchMedia('(max-width: 760px)').matches ? 'vertical' : 'horizontal',
+    );
+}
+
 function wireServices() {
   const panel = document.getElementById('svc-panel');
   if (!panel) return;
   const tabs = Array.from(document.querySelectorAll('[data-service]'));
+  syncServiceTabOrientation();
   function activate(key, focus = false, syncAddress = true) {
     if (syncAddress && getSiteRoute() !== 'services/' + key) {
       history.pushState(null, '', cleanSitePath('services/' + key));
@@ -28,8 +38,9 @@ function wireServices() {
     t.addEventListener('click', () => activate(t.dataset.service));
     t.addEventListener('keydown', (e) => {
       let next;
-      if (e.key === 'ArrowRight') next = (i + 1) % tabs.length;
-      else if (e.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (i + 1) % tabs.length;
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp')
+        next = (i - 1 + tabs.length) % tabs.length;
       else if (e.key === 'Home') next = 0;
       else if (e.key === 'End') next = tabs.length - 1;
       else return;
