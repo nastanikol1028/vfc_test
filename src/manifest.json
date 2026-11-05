@@ -40,12 +40,14 @@
     "src/js/pages/category-detail.js",
     "src/js/features/reference-navigation.js",
     "src/js/core/router.js",
+    "src/js/features/lead-drafts.js",
     "src/js/features/lead-forms.js",
     "src/js/data/quiz.js",
     "src/js/pages/document-quiz.js",
     "src/js/features/document-quiz.js",
     "src/js/features/document-assistant.js",
     "src/js/components/messenger-links.js",
+    "src/js/features/floating-assistant.js",
     "src/js/main.js"
   ],
   "styles": [

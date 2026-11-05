@@ -4526,3 +4526,33 @@ Object.assign(VFC_TRANSLATIONS, {
       zh: '我们不仅直接服务于制造商和进口商，也协助报关代理、物流公司、代理商和中间人为其客户办理文件，简化认证流程。我们根据具体任务所需的费用和时间提供不同办理方案。针对各类产品，我们与不同的实验室和认证机构合作，每家都有各自的专业领域和优势。',
     },
 });
+
+Object.assign(VFC_TRANSLATIONS, {
+  Телефон: { en: 'Phone', zh: '电话' },
+  'Введите корректный e-mail.': {
+    en: 'Enter a valid email address.',
+    zh: '请输入有效的电子邮件地址。',
+  },
+  'Введите номер телефона: от 7 до 15 цифр, можно с кодом страны.': {
+    en: 'Enter a phone number with 7–15 digits, optionally including a country code.',
+    zh: '请输入7至15位的电话号码，可包含国家代码。',
+  },
+  'Введите корректный телефон или e-mail.': {
+    en: 'Enter a valid phone number or email address.',
+    zh: '请输入有效的电话号码或电子邮件地址。',
+  },
+  'Черновик восстановлен.': { en: 'Draft restored.', zh: '草稿已恢复。' },
+  'Черновик восстановлен. После обновления страницы прикрепите файлы заново.': {
+    en: 'Draft restored. After reloading the page, please attach your files again.',
+    zh: '草稿已恢复。刷新页面后请重新添加附件。',
+  },
+  'Очистить черновик': { en: 'Clear draft', zh: '清除草稿' },
+});
+
+Object.assign(VFC_TRANSLATIONS, {
+  'Текст черновика заявки временно сохраняется в текущей вкладке браузера. Вы можете удалить его кнопкой «Очистить черновик». Файлы до отправки остаются в памяти открытой страницы и сохраняются при переходах внутри сайта; после обновления страницы их нужно прикрепить заново.':
+    {
+      en: 'The enquiry draft text is temporarily saved in the current browser tab. You can remove it with “Clear draft”. Before submission, files stay in the open page’s memory and are retained during navigation within the site; after reloading the page, they must be attached again.',
+      zh: '申请草稿文字临时保存在当前浏览器标签页中，可通过“清除草稿”删除。提交前，附件仅保存在已打开页面的内存中，站内跳转时会保留；刷新页面后需重新添加附件。',
+    },
+});

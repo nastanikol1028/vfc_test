@@ -10,7 +10,8 @@
     "preview": "node scripts/serve.cjs",
     "format": "prettier --write src scripts",
     "format:check": "prettier --check src scripts",
-    "test:browser": "node scripts/smoke.cjs"
+    "test:browser": "node scripts/smoke.cjs",
+    "test:regression": "node scripts/regression.cjs"
   },
   "repository": {
     "type": "git",

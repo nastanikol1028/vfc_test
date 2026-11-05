@@ -1,4 +1,6 @@
 // main.js
+initLeadDrafts();
+initFloatingAssistant();
 initDocumentAssistant();
 
 initSiteUX();

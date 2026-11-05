@@ -344,3 +344,66 @@
     padding: 8px 6px;
   }
 }
+
+/* Allow longer facts without pushing the mobile page sideways. */
+html .home-page .home-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.home-stats > div {
+  min-width: 0;
+}
+html .home-page .home-stats strong {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.lead-draft-note {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 0 20px;
+  color: #56748a;
+  font-size: 14px;
+}
+.lead-draft-note button {
+  border: 0;
+  background: none;
+  color: #3278b8;
+  padding: 3px 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  html .home-page .home-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 8px;
+  }
+  html .home-page .home-stats strong {
+    font-size: 23px;
+  }
+  .home-stats > div:last-child {
+    grid-column: 1 / -1;
+    padding-top: 16px;
+    border-top: 1px solid #dce8f2;
+  }
+}
+
+.floating.is-obscuring-control {
+  visibility: hidden;
+  pointer-events: none;
+}
+.reference-footer .footer-messengers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+.reference-footer .footer-messengers a {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}

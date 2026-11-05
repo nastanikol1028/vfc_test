@@ -20,6 +20,7 @@ npm test              # сборка, синтаксис JS, метаданны�
 npm run format        # единое форматирование исходников
 npm run format:check  # проверка форматирования
 npm run test:browser  # Chromium: формы, меню, языки, опросник; preview должен работать
+npm run test:regression # черновики, файлы, мобильная вёрстка, вкладки, контакты
 ```
 
 ## Структура

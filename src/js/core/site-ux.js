@@ -156,7 +156,8 @@ function routeSeoData(route = getSiteRoute()) {
     };
   let [title, description] = VFC_PAGE_META[root || ''] || VFC_PAGE_META[''];
   if (root === 'catalog' && id) {
-    title = refCategories.find((c) => c[0] === id)[1] + ' — ' + vfcT('документы и требования');
+    title =
+      vfcT(refCategories.find((c) => c[0] === id)[1]) + ' — ' + vfcT('документы и требования');
     description = VFC_CATEGORY_DETAILS[id].intro;
   } else if (root === 'services' && id) {
     title = serviceDirections[id].title;
@@ -345,6 +346,7 @@ function enhanceTerminology(container = document.getElementById('app')) {
   target.append(row);
 }
 function finalizeRouteUI() {
+  scheduleFloatingAssistant();
   enhanceMessengerLinks();
   closeMobileMenu();
   normalizeSiteLinks();

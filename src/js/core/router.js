@@ -1,5 +1,6 @@
 // core/router.js
 function render() {
+  captureLeadDrafts();
   routeTransitionStart();
   if (window._vfcPhotoCleanup) {
     window._vfcPhotoCleanup();

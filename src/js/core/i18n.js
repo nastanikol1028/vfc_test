@@ -121,6 +121,8 @@ function vfcApplyLanguage() {
           zh: 'VFC-TEST — 产品认证',
         }[vfcLanguage];
     if (typeof updateSeoMetadata === 'function') updateSeoMetadata();
+    if (typeof validateLeadContact === 'function')
+      document.querySelectorAll('.lead-form').forEach(validateLeadContact);
   } finally {
     vfcApplyingLanguage = false;
     if (vfcTranslationObserver)

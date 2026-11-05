@@ -16,5 +16,5 @@ const legalPage = (kind) => {
     cookies:
       'Сайт не устанавливает аналитические или рекламные cookie. При переходе на внешние площадки действуют правила этих площадок.',
   };
-  return `${pageHero(titles[kind], titles[kind], '')}<section class="section"><div class="wrap content"><p>${text[kind]}</p><a class="home-link" href="mailto:m1@vfc-test.ru">m1@vfc-test.ru</a></div></section>`;
+  return `${pageHero(titles[kind], titles[kind], '')}<section class="section"><div class="wrap content"><p>${text[kind]}</p>${kind === 'privacy' ? '<p>Текст черновика заявки временно сохраняется в текущей вкладке браузера. Вы можете удалить его кнопкой «Очистить черновик». Файлы до отправки остаются в памяти открытой страницы и сохраняются при переходах внутри сайта; после обновления страницы их нужно прикрепить заново.</p>' : ''}<a class="home-link" href="mailto:m1@vfc-test.ru">m1@vfc-test.ru</a></div></section>`;
 };

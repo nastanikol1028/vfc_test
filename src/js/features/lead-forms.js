@@ -6,7 +6,11 @@ function wirePhotoForm(form) {
     result = form.querySelector('.success'),
     drop = form.querySelector('.photo-drop'),
     counter = form.querySelector('[data-photo-count]');
-  let files = [];
+  const makeItem = (file) => ({
+    file,
+    url: /\.(jpe?g|png|webp|gif|avif|bmp)$/i.test(file.name) ? URL.createObjectURL(file) : null,
+  });
+  let files = (leadDraftFiles.get(form.dataset.draftKey) || []).map(makeItem);
   const maxBytes = 20 * 1024 * 1024;
   const extensions = new Set([
     'jpg',
@@ -40,6 +44,10 @@ function wirePhotoForm(form) {
     if (file.url) URL.revokeObjectURL(file.url);
   };
   function draw() {
+    persistLeadFiles(
+      form,
+      files.map((item) => item.file),
+    );
     list.replaceChildren();
     counter.textContent = files.length
       ? vfcT('Файлов:') +
@@ -157,6 +165,13 @@ function wirePhotoForm(form) {
     if (previous) previous();
     files.forEach(release);
   };
+  form._clearAttachments = () => {
+    files.forEach(release);
+    files = [];
+    input.value = '';
+    error.textContent = '';
+    draw();
+  };
   draw();
 }
 
@@ -177,10 +192,22 @@ function buildLeadBody(data, photoCount) {
 }
 
 async function submitLeadForm(form, files = []) {
+  validateLeadContact(form);
   if (form.dataset.submitting || !form.reportValidity()) return false;
   const data = new FormData(form),
     result = form.querySelector('.success');
   if (String(data.get('_gotcha') || '').trim()) return false;
+  const categoryInfo = refCategories.find(([id]) => id === data.get('category'));
+  if (categoryInfo) {
+    data.set('category_id', categoryInfo[0]);
+    data.set('category', categoryInfo[1]);
+  }
+  const serviceInfo = serviceDirections[data.get('service')];
+  if (serviceInfo) {
+    data.set('service_id', data.get('service'));
+    data.set('service', serviceInfo.title);
+  }
+  if (data.get('service') === 'marketplaces') data.set('service', 'Подготовка к маркетплейсу');
   data.set('_subject', 'Заявка с сайта VFC-TEST');
   data.set('source_page', location.href);
   data.set('attachment_count', String(files.length));
@@ -217,6 +244,7 @@ async function submitLeadForm(form, files = []) {
       throw new Error(message);
     }
     form.reset();
+    clearLeadDraft(form);
     result.textContent = vfcT('Заявка отправлена! Мы свяжемся с вами по указанным контактам.');
     showLeadSuccess();
     return true;
@@ -241,6 +269,7 @@ async function submitLeadForm(form, files = []) {
 function wireForms() {
   document.querySelectorAll('.lead-form').forEach((form) => {
     setupLeadProtection(form);
+    setupLeadDraft(form);
     form.action = 'https://formspree.io/f/maeelyvj';
     form.method = 'post';
     form.enctype = 'multipart/form-data';

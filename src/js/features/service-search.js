@@ -3,7 +3,10 @@ function wireServices() {
   const panel = document.getElementById('svc-panel');
   if (!panel) return;
   const tabs = Array.from(document.querySelectorAll('[data-service]'));
-  function activate(key, focus = false) {
+  function activate(key, focus = false, syncAddress = true) {
+    if (syncAddress && getSiteRoute() !== 'services/' + key) {
+      history.pushState(null, '', cleanSitePath('services/' + key));
+    }
     const d = serviceDirections[key];
     const factors = document.querySelector('.svc-factors');
     if (factors) factors.hidden = key === 'specifications';
@@ -19,6 +22,7 @@ function wireServices() {
     enhanceTerminology(panel);
     normalizeSiteLinks();
     if (typeof vfcApplyLanguage === 'function') vfcApplyLanguage();
+    updateSeoMetadata();
   }
   tabs.forEach((t, i) => {
     t.addEventListener('click', () => activate(t.dataset.service));
@@ -35,6 +39,8 @@ function wireServices() {
   });
   activate(
     serviceDirections[getSiteRoute().split('/')[1]] ? getSiteRoute().split('/')[1] : 'declaration',
+    false,
+    false,
   );
   const form = document.getElementById('svc-search'),
     input = document.getElementById('svc-search-input'),
