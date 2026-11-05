@@ -31,7 +31,5 @@ function applyResponsiveImages() {
     img.sizes = img.closest('.ref-category,.svc-product-card,.home-category')
       ? '(max-width: 600px) calc(100vw - 40px), (max-width: 1000px) 45vw, 380px'
       : '(max-width: 760px) calc(100vw - 40px), (max-width: 1200px) 50vw, 720px';
-    if (!img.hasAttribute('width')) img.width = data.width;
-    if (!img.hasAttribute('height')) img.height = data.height;
   });
 }
