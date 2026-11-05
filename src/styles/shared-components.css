@@ -314,3 +314,29 @@
     margin-bottom: 18px;
   }
 }
+
+/* Align the MAX prompt, brand mark and number within the service sidebar. */
+.sidebox .service-max-contact {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.sidebox .service-max-contact > span {
+  display: inline-block;
+}
+.sidebox .service-max-contact > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.sidebox .service-max-contact .messenger-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+}
